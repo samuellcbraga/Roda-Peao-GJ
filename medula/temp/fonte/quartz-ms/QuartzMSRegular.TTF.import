@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://bqcqphicajray"
-path="res://.godot/imported/QuartzMSRegular.TTF-4c6b7bf8a04c649967949a8b9c905dcb.fontdata"
+path="res://.godot/imported/QuartzMSRegular.TTF-4775f3d2c1c9d1a6009c8910c1ae4f67.fontdata"
 
 [deps]
 
-source_file="res://assets/fonte/quartz-ms/QuartzMSRegular.TTF"
-dest_files=["res://.godot/imported/QuartzMSRegular.TTF-4c6b7bf8a04c649967949a8b9c905dcb.fontdata"]
+source_file="res://medula/temp/fonte/quartz-ms/QuartzMSRegular.TTF"
+dest_files=["res://.godot/imported/QuartzMSRegular.TTF-4775f3d2c1c9d1a6009c8910c1ae4f67.fontdata"]
 
 [params]
 

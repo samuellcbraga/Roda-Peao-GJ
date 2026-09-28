@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dbdljwe8g2rr5"
-path="res://.godot/imported/Background-Temp-1.jpg-3d1726ecd708fdc170a30fc108669cbd.ctex"
+path="res://.godot/imported/Background-Temp-1.jpg-e76e3751b787a3146d7c86594a1e494e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/background-temp/Background-Temp-1.jpg"
-dest_files=["res://.godot/imported/Background-Temp-1.jpg-3d1726ecd708fdc170a30fc108669cbd.ctex"]
+source_file="res://medula/temp/fundos/Background-Temp-1.jpg"
+dest_files=["res://.godot/imported/Background-Temp-1.jpg-e76e3751b787a3146d7c86594a1e494e.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1j2ve7vlq6u5"
-path="res://.godot/imported/Amigo1.png-1209b8b40815b46453df54ccf2845550.ctex"
+uid="uid://bfbnvjlrdt3md"
+path="res://.godot/imported/splashfundo.jpg-1185818e921fc559d58c7c6ad8eabba1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters-temp/Amigo1.png"
-dest_files=["res://.godot/imported/Amigo1.png-1209b8b40815b46453df54ccf2845550.ctex"]
+source_file="res://medula/temp/fundos/splashfundo.jpg"
+dest_files=["res://.godot/imported/splashfundo.jpg-1185818e921fc559d58c7c6ad8eabba1.ctex"]
 
 [params]
 

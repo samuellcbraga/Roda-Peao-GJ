@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://c5788gjidkqwf"]
 
+[ext_resource type="Texture2D" uid="uid://d1j2ve7vlq6u5" path="res://medula/temp/personagens/Amigo1.png" id="1_rn5kp"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86cne"]
 content_margin_left = 24.0
 content_margin_top = 12.0
@@ -20,7 +22,7 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="Caixa de Diálogo" type="Control" unique_id=1393830835]
+[node name="CaixadeDiálogo" type="Control" unique_id=1393830835]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -39,6 +41,7 @@ offset_top = -20.0
 offset_right = 40.0
 offset_bottom = 20.0
 grow_vertical = 2
+texture = ExtResource("1_rn5kp")
 metadata/_edit_use_anchors_ = true
 
 [node name="DialogBox" type="Control" parent="." unique_id=1262844839]
