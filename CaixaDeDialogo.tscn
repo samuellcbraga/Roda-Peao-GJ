@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://c5788gjidkqwf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86cne"]
+content_margin_left = 24.0
+content_margin_top = 12.0
+content_margin_right = 12.0
+content_margin_bottom = 24.0
+bg_color = Color(0.42352942, 0.6, 0.6, 0.8901961)
+corner_radius_top_left = 28
+corner_radius_top_right = 28
+corner_radius_bottom_right = 28
+corner_radius_bottom_left = 28
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbhkt"]
+content_margin_left = 5.0
+content_margin_right = 5.0
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="Caixa de Diálogo" type="Control" unique_id=1393830835]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="spriteChar" type="TextureRect" parent="." unique_id=327323536]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.032118056
+anchor_top = 0.5
+anchor_right = 0.032118056
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="DialogBox" type="Control" parent="." unique_id=1262844839]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -210.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="PanelContainer" type="PanelContainer" parent="DialogBox" unique_id=49176593]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_right = -10.0
+offset_bottom = -34.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_86cne")
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogBox/PanelContainer" unique_id=573531317]
+layout_mode = 2
+
+[node name="textoDoDiálogo" type="RichTextLabel" parent="DialogBox/PanelContainer/MarginContainer" unique_id=969698106]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 34
+text = "lorem ipsum et dolor"
+
+[node name="nameTag" type="PanelContainer" parent="DialogBox" unique_id=69366985]
+layout_mode = 0
+offset_right = 91.0
+offset_bottom = 40.0
+offset_transform_enabled = true
+offset_transform_position = Vector2(30, -50)
+theme_override_styles/panel = SubResource("StyleBoxFlat_xbhkt")
+
+[node name="nomeChar" type="Label" parent="DialogBox/nameTag" unique_id=1189778179]
+layout_mode = 2
+text = "nomeChar"
