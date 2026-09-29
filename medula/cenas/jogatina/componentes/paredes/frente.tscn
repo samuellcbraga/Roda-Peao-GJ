@@ -2,6 +2,14 @@
 
 [ext_resource type="Script" uid="uid://b5g71nsiddacs" path="res://medula/cenas/jogatina/componentes/paredes/frente.gd" id="1_ytftk"]
 [ext_resource type="Texture2D" uid="uid://c4n2h473nmekq" path="res://medula/temp/fundos/frente_placeholder.png" id="2_3ikii"]
+[ext_resource type="PackedScene" uid="uid://bov6gk37h4oga" path="res://medula/cenas/jogatina/componentes/interativo.tscn" id="4_2ov5w"]
+[ext_resource type="PackedScene" uid="uid://c5788gjidkqwf" path="res://medula/cenas/jogatina/componentes/CaixaDeDialogo.tscn" id="4_caixa"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2ov5w"]
+load_path = "res://.godot/imported/oliginal.png-abacd57606b7a5e08ca3f381e4239967.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2fdau"]
+load_path = "res://.godot/imported/Amigo1.png-ac8ef86ec98f3a67e374a43618c606f5.ctex"
 
 [node name="Frente" type="Control" unique_id=1541279976]
 layout_mode = 3
@@ -34,6 +42,29 @@ offset_top = 537.0
 offset_right = 106.0
 offset_bottom = 633.0
 text = "<-"
+
+[node name="InterativoTemp" parent="." unique_id=1105394145 instance=ExtResource("4_2ov5w")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49381253
+anchor_top = 0.5425926
+anchor_right = 0.61766666
+anchor_bottom = 0.8072963
+offset_left = 0.87994385
+offset_right = -0.92004395
+offset_bottom = 0.11999512
+texture_normal = SubResource("CompressedTexture2D_2ov5w")
+nome = "Tiringa"
+retrato = SubResource("CompressedTexture2D_2fdau")
+falas = Array[String](["Oi eu sou o tiringa"])
+metadata/_edit_use_anchors_ = true
+
+[node name="CaixadeDiálogo" parent="." unique_id=1393830835 instance=ExtResource("4_caixa")]
+layout_mode = 1
+offset_left = 124.0
+offset_top = 9.0
+offset_right = -55.0
+offset_bottom = 9.0
 
 [connection signal="pressed" from="BotaoDireita" to="." method="_on_BotaoDireita_pressed"]
 [connection signal="pressed" from="BotaoEsquerda" to="." method="_on_BotaoEsquerda_pressed"]

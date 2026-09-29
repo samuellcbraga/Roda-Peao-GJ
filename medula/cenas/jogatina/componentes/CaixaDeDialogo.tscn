@@ -1,6 +1,65 @@
 [gd_scene format=3 uid="uid://c5788gjidkqwf"]
 
-[ext_resource type="Texture2D" uid="uid://d1j2ve7vlq6u5" path="res://medula/temp/personagens/Amigo1.png" id="1_rn5kp"]
+[sub_resource type="GDScript" id="GDScript_86cne"]
+resource_name = "caixaDeDialogo"
+script/source = "extends Control
+@onready var nome_char: Label = $DialogBox/nameTag/nomeChar
+@onready var texto_do_diálogo: RichTextLabel = $DialogBox/PanelContainer/MarginContainer/textoDoDiálogo
+@onready var sprite_char: TextureRect = $spriteChar
+@onready var caixa: Control = $DialogBox
+var falas: Array[String] = []
+var indice := 0 
+var tween: Tween
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	hide()
+
+func mostrarFalas(nomeChar: String, portraitChar: Texture2D, novasFalas: Array[String]):
+	if falas.is_empty():
+		falas = novasFalas
+		indice = 0
+		nome_char.text = nomeChar
+		sprite_char.texture = portraitChar
+		texto_do_diálogo.text = falas[indice]
+		show()
+		_pop_in()
+signal final_do_dialogo
+
+func _input(event: InputEvent) -> void:
+	if not visible:
+		return
+	if tween and tween.is_running():
+		return
+	var clicou: bool = event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT
+	if clicou or event.is_action_pressed(\"ui_accept\"):
+		get_viewport().set_input_as_handled()
+		avancar()
+func avancar() -> void:
+	indice += 1
+	if indice >= falas.size():
+		hide()
+		falas = []
+		await _pop_out()
+		final_do_dialogo.emit()
+	else:
+		texto_do_diálogo.text = falas[indice]
+
+func _pop_in() -> void:                                           
+	caixa.pivot_offset = caixa.size / 2
+	caixa.scale = Vector2(0.8, 0.8)
+	caixa.modulate.a = 0.0
+	if tween: tween.kill()
+	tween = create_tween().set_parallel()
+	tween.tween_property(caixa, \"scale\", Vector2.ONE, 0.25).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.tween_property(caixa, \"modulate:a\", 1.0, 0.15)
+func _pop_out() -> void:                                          # NEW
+	if tween: tween.kill()
+	tween = create_tween().set_parallel()
+	tween.tween_property(caixa, \"scale\", Vector2(0.8, 0.8), 0.15).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+	tween.tween_property(caixa, \"modulate:a\", 0.0, 0.15)
+	await tween.finished
+	
+"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86cne"]
 content_margin_left = 24.0
@@ -22,13 +81,14 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="CaixadeDiálogo" type="Control" unique_id=1393830835]
+[node name="CaixadeDiálogo" type="Control" unique_id=1393830835 groups=["caixaDialogo"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = SubResource("GDScript_86cne")
 
 [node name="spriteChar" type="TextureRect" parent="." unique_id=327323536]
 layout_mode = 1
@@ -37,11 +97,10 @@ anchor_left = 0.032118056
 anchor_top = 0.5
 anchor_right = 0.032118056
 anchor_bottom = 0.5
-offset_top = -20.0
-offset_right = 40.0
-offset_bottom = 20.0
+offset_top = -360.0
+offset_right = 400.0
+offset_bottom = 360.0
 grow_vertical = 2
-texture = ExtResource("1_rn5kp")
 metadata/_edit_use_anchors_ = true
 
 [node name="DialogBox" type="Control" parent="." unique_id=1262844839]
@@ -72,7 +131,6 @@ layout_mode = 2
 [node name="textoDoDiálogo" type="RichTextLabel" parent="DialogBox/PanelContainer/MarginContainer" unique_id=969698106]
 layout_mode = 2
 theme_override_font_sizes/normal_font_size = 34
-text = "lorem ipsum et dolor"
 
 [node name="nameTag" type="PanelContainer" parent="DialogBox" unique_id=69366985]
 layout_mode = 0
@@ -84,4 +142,3 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_xbhkt")
 
 [node name="nomeChar" type="Label" parent="DialogBox/nameTag" unique_id=1189778179]
 layout_mode = 2
-text = "nomeChar"
