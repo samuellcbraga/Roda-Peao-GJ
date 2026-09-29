@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://c1tsfngafq8dm"]
+
+[ext_resource type="Script" uid="uid://b5g71nsiddacs" path="res://medula/cenas/jogatina/componentes/paredes/frente.gd" id="1_ytftk"]
+[ext_resource type="Texture2D" uid="uid://c4n2h473nmekq" path="res://medula/temp/fundos/frente_placeholder.png" id="2_3ikii"]
+
+[node name="Frente" type="Control" unique_id=1541279976]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ytftk")
+
+[node name="Fundo" type="TextureRect" parent="." unique_id=966168995]
+layout_mode = 0
+offset_left = -2.0
+offset_right = 1998.0
+offset_bottom = 1378.0
+texture = ExtResource("2_3ikii")
+
+[node name="BotaoDireita" type="Button" parent="." unique_id=162550679]
+layout_mode = 0
+offset_left = 1824.0
+offset_top = 542.0
+offset_right = 1904.0
+offset_bottom = 635.0
+text = "->"
+
+[node name="BotaoEsquerda" type="Button" parent="." unique_id=1386405263]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 537.0
+offset_right = 106.0
+offset_bottom = 633.0
+text = "<-"
+
+[connection signal="pressed" from="BotaoDireita" to="." method="_on_BotaoDireita_pressed"]
+[connection signal="pressed" from="BotaoEsquerda" to="." method="_on_BotaoEsquerda_pressed"]

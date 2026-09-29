@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://cdb2fy7aocnow"]
+
+[ext_resource type="Texture2D" uid="uid://d2sboya18an51" path="res://medula/temp/fundos/tras_placeholder.png" id="1_pwhha"]
+[ext_resource type="Script" uid="uid://dfkim2sv2hw0a" path="res://medula/cenas/jogatina/componentes/paredes/tras.gd" id="1_uyoed"]
+
+[node name="Tras" type="Control" unique_id=1541279976]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uyoed")
+
+[node name="Fundo" type="TextureRect" parent="." unique_id=966168995]
+layout_mode = 0
+offset_left = -2.0
+offset_right = 1998.0
+offset_bottom = 1378.0
+texture = ExtResource("1_pwhha")
+
+[node name="BotaoDireita" type="Button" parent="." unique_id=162550679]
+layout_mode = 0
+offset_left = 1824.0
+offset_top = 542.0
+offset_right = 1904.0
+offset_bottom = 635.0
+text = "->"
+
+[node name="BotaoEsquerda" type="Button" parent="." unique_id=1386405263]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 537.0
+offset_right = 106.0
+offset_bottom = 633.0
+text = "<-"
+
+[connection signal="pressed" from="BotaoDireita" to="." method="_on_BotaoDireita_pressed"]
+[connection signal="pressed" from="BotaoEsquerda" to="." method="_on_BotaoEsquerda_pressed"]
