@@ -10,7 +10,8 @@ script/source = "extends TextureButton
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pressed.connect(_on_pressed)
-
+	mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+	
 func _on_pressed() -> void: 
 	var caixa = get_tree().get_first_node_in_group(\"caixaDialogo\")
 	if caixa == null:
