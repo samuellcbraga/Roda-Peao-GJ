@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://caqjt3d665gl8"]
 
+[ext_resource type="Script" uid="uid://bvsgw6xdk5yx" path="res://medula/cenas/main/Main.gd" id="1_aqkb7"]
+[ext_resource type="PackedScene" uid="uid://ckqtehj8ncvt5" path="res://medula/cenas/jogatina/Jogatina.tscn" id="2_4dojx"]
+[ext_resource type="PackedScene" uid="uid://2hvtfgks8fkt" path="res://medula/cenas/inicio/Inicio.tscn" id="2_aqkb7"]
+
 [node name="Main" type="Control" unique_id=1515211865]
 layout_mode = 3
 anchors_preset = 15
@@ -7,3 +11,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_aqkb7")
+
+[node name="Inicio" parent="." unique_id=205044729 instance=ExtResource("2_aqkb7")]
+layout_mode = 1
+
+[node name="Jogatina" parent="." unique_id=1401306619 instance=ExtResource("2_4dojx")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="Inicio/Iniciar" to="." method="_on_iniciar_pressed"]
+
+[editable path="Inicio"]
+[editable path="Jogatina"]

@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Rádio-Peão"
-run/main_scene="uid://c1tsfngafq8dm"
+run/main_scene="uid://caqjt3d665gl8"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+atlas="*uid://cwnbpn6ft1gj0"
 
 [display]
 
