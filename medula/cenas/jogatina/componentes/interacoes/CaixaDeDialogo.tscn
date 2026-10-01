@@ -142,13 +142,13 @@ corner_radius_top_right = 10
 corner_radius_bottom_right = 10
 corner_radius_bottom_left = 10
 
-[node name="CaixadeDiálogo" type="Control" unique_id=1393830835 groups=["caixaDialogo"]]
-layout_mode = 3
+[node name="CaixadeDialogo" type="ColorRect" unique_id=1119639224 groups=["caixaDialogo"]]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0, 0, 0, 0.43137255)
 script = SubResource("GDScript_86cne")
 
 [node name="spriteChar" type="TextureRect" parent="." unique_id=327323536]

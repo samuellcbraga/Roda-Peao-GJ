@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgcd2nbam16ih"
-path="res://.godot/imported/image-removebg-preview.png-f43c47673332662a078e0f9d4987840f.ctex"
+uid="uid://b2mntvslsirn1"
+path="res://.godot/imported/fundo-diario_placeholder.png-e81162ae8fa7e7e4640385d1e02cfaa8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://medula/cenas/jogatina/texturas/image-removebg-preview.png"
-dest_files=["res://.godot/imported/image-removebg-preview.png-f43c47673332662a078e0f9d4987840f.ctex"]
+source_file="res://medula/cenas/jogatina/componentes/diario/texturas/fundo-diario_placeholder.png"
+dest_files=["res://.godot/imported/fundo-diario_placeholder.png-e81162ae8fa7e7e4640385d1e02cfaa8.ctex"]
 
 [params]
 

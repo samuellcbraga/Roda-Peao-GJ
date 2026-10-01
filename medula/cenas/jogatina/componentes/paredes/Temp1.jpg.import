@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2sboya18an51"
-path="res://.godot/imported/tras_placeholder.png-57a4c223f3631d09519a8e46c01cdf63.ctex"
+uid="uid://nloiqqpum72p"
+path="res://.godot/imported/Temp1.jpg-33cff4228276d052e7cb02dbe5ac893a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://medula/cenas/jogatina/texturas/paredes/tras_placeholder.png"
-dest_files=["res://.godot/imported/tras_placeholder.png-57a4c223f3631d09519a8e46c01cdf63.ctex"]
+source_file="res://medula/cenas/jogatina/componentes/paredes/Temp1.jpg"
+dest_files=["res://.godot/imported/Temp1.jpg-33cff4228276d052e7cb02dbe5ac893a.ctex"]
 
 [params]
 

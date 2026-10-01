@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://csh36u86iks27"
-path="res://.godot/imported/esquerda_placeholder.png-f577f3df514baef3aa1f5bd983fb5512.ctex"
+uid="uid://cmhel3h8t5mvc"
+path="res://.godot/imported/diario-botao.png-5db0c7937450ad6fc523499e17d1fb31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://medula/cenas/jogatina/texturas/paredes/esquerda_placeholder.png"
-dest_files=["res://.godot/imported/esquerda_placeholder.png-f577f3df514baef3aa1f5bd983fb5512.ctex"]
+source_file="res://medula/cenas/jogatina/componentes/diario/texturas/diario-botao.png"
+dest_files=["res://.godot/imported/diario-botao.png-5db0c7937450ad6fc523499e17d1fb31.ctex"]
 
 [params]
 

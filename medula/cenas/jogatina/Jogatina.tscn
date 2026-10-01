@@ -1,13 +1,132 @@
 [gd_scene format=3 uid="uid://ckqtehj8ncvt5"]
 
 [ext_resource type="Script" uid="uid://gwxslataho4v" path="res://medula/cenas/jogatina/Jogatina.gd" id="1_oisr2"]
-[ext_resource type="Texture2D" uid="uid://csh36u86iks27" path="res://medula/cenas/jogatina/texturas/paredes/esquerda_placeholder.png" id="2_igwc1"]
-[ext_resource type="Texture2D" uid="uid://d2sboya18an51" path="res://medula/cenas/jogatina/texturas/paredes/tras_placeholder.png" id="3_s34v2"]
-[ext_resource type="Texture2D" uid="uid://b8peb0pnatga7" path="res://medula/cenas/jogatina/texturas/paredes/direita_placeholder.png" id="4_mnwyw"]
-[ext_resource type="Texture2D" uid="uid://c4n2h473nmekq" path="res://medula/cenas/jogatina/texturas/paredes/frente_placeholder.png" id="5_yonwv"]
+[ext_resource type="Texture2D" uid="uid://csh36u86iks27" path="res://medula/cenas/jogatina/componentes/paredes/esquerda_placeholder.png" id="2_igwc1"]
+[ext_resource type="Texture2D" uid="uid://d2sboya18an51" path="res://medula/cenas/jogatina/componentes/paredes/tras_placeholder.png" id="3_s34v2"]
+[ext_resource type="Texture2D" uid="uid://b8peb0pnatga7" path="res://medula/cenas/jogatina/componentes/paredes/direita_placeholder.png" id="4_mnwyw"]
+[ext_resource type="Texture2D" uid="uid://vlv8m6oslyka" path="res://medula/personagens/mesas/amigos/mesa-amigos_placeholder.png" id="5_s34v2"]
+[ext_resource type="Texture2D" uid="uid://c4n2h473nmekq" path="res://medula/cenas/jogatina/componentes/paredes/frente_placeholder.png" id="5_yonwv"]
 [ext_resource type="PackedScene" uid="uid://c5788gjidkqwf" path="res://medula/cenas/jogatina/componentes/interacoes/CaixaDeDialogo.tscn" id="6_sarcl"]
 [ext_resource type="PackedScene" uid="uid://bov6gk37h4oga" path="res://medula/cenas/jogatina/componentes/interacoes/ObjetoInterativo.tscn" id="7_dh8hb"]
 [ext_resource type="Texture2D" uid="uid://d0586h3gy7ciq" path="res://medula/personagens/mesas/meninas/mesa-meninas_placeholder.png" id="9_yonwv"]
+[ext_resource type="Texture2D" uid="uid://cyqqlmf2moyfw" path="res://icon.svg" id="10_mnwyw"]
+[ext_resource type="Script" uid="uid://byyxk0a4hml5q" path="res://medula/cenas/jogatina/Diario.gd" id="11_dh8hb"]
+[ext_resource type="Texture2D" uid="uid://b2mntvslsirn1" path="res://medula/cenas/jogatina/componentes/diario/texturas/fundo-diario_placeholder.png" id="12_iwlr2"]
+[ext_resource type="Texture2D" uid="uid://cmhel3h8t5mvc" path="res://medula/cenas/jogatina/componentes/diario/texturas/diario-botao.png" id="13_hnops"]
+[ext_resource type="Texture2D" uid="uid://qfgpechjsgkk" path="res://medula/cenas/jogatina/componentes/diario/texturas/diario.png" id="14_iwlr2"]
+
+[sub_resource type="Animation" id="Animation_am7br"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -1080)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DiarioBotao:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1440, 1080)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_2bkaf"]
+resource_name = "desce"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.2, 1),
+"update": 0,
+"values": [Vector2(0, -1080), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DiarioBotao:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.2, 1),
+"update": 0,
+"values": [Vector2(1440, 1080), Vector2(1440, 980)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(0.4204482, 0.4204482, 1),
+"update": 0,
+"values": [Vector2(1e-05, 1), Vector2(1e-05, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_dh8hb"]
+resource_name = "sobe"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.2, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -1080)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DiarioBotao:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.2, 0.2),
+"update": 0,
+"values": [Vector2(1440, 980), Vector2(1440, 1080)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_thjch"]
+_data = {
+&"RESET": SubResource("Animation_am7br"),
+&"desce": SubResource("Animation_2bkaf"),
+&"sobe": SubResource("Animation_dh8hb")
+}
 
 [node name="Jogatina" type="Control" unique_id=1401306619]
 layout_mode = 3
@@ -54,6 +173,21 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_s34v2")
 
+[node name="MesaBebum" parent="Bar/Paredes/Tras" unique_id=1105394145 instance=ExtResource("7_dh8hb")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12688805
+anchor_top = 0.53582644
+anchor_right = 0.4866797
+anchor_bottom = 1.2199743
+offset_left = -36.62506
+offset_top = -161.69257
+offset_right = -38.42505
+offset_bottom = -161.57251
+texture_normal = ExtResource("5_s34v2")
+personagem = "amigo"
+metadata/_edit_use_anchors_ = true
+
 [node name="Direita" type="TextureRect" parent="Bar/Paredes" unique_id=199541536]
 layout_mode = 1
 anchors_preset = 15
@@ -77,13 +211,6 @@ offset_bottom = -161.57251
 texture_normal = ExtResource("9_yonwv")
 personagem = "fulanadetal"
 metadata/_edit_use_anchors_ = true
-
-[node name="CaixadeDiálogo" parent="Bar/Paredes/Direita" unique_id=959077882 instance=ExtResource("6_sarcl")]
-layout_mode = 1
-offset_left = 126.0
-offset_top = 9.0
-offset_right = -53.0
-offset_bottom = 9.0
 
 [node name="Frente" type="TextureRect" parent="Bar/Paredes" unique_id=245961603]
 visible = false
@@ -111,5 +238,102 @@ offset_right = 106.0
 offset_bottom = 633.0
 text = "<-"
 
+[node name="CaixadeDialogo" parent="Bar" unique_id=1393830835 instance=ExtResource("6_sarcl")]
+visible = false
+layout_mode = 1
+
+[node name="RelogioHolder" type="ColorRect" parent="." unique_id=291039447]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -220.0
+offset_right = 220.0
+offset_bottom = 154.0
+grow_horizontal = 2
+color = Color(0, 0, 0, 0.7294118)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="RelogioHolder" unique_id=1511361813]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Hora" type="Label" parent="RelogioHolder/HBoxContainer" unique_id=832262471]
+layout_mode = 2
+theme_override_font_sizes/font_size = 72
+text = "18h30"
+vertical_alignment = 1
+
+[node name="Cronometro" type="TextureProgressBar" parent="RelogioHolder/HBoxContainer" unique_id=173315834]
+layout_mode = 2
+size_flags_vertical = 4
+value = 100.0
+fill_mode = 4
+texture_progress = ExtResource("10_mnwyw")
+
+[node name="Diario" type="ColorRect" parent="." unique_id=1663642969]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1080.0
+offset_bottom = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.83137256)
+script = ExtResource("11_dh8hb")
+
+[node name="Mesa" type="TextureRect" parent="Diario" unique_id=1559770931]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -444.0
+offset_right = 444.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("12_iwlr2")
+
+[node name="DiarioBotao" type="TextureButton" parent="Diario" unique_id=1872055013]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -480.0
+offset_top = 1080.0
+offset_bottom = 1244.0015
+grow_horizontal = 0
+texture_normal = ExtResource("13_hnops")
+stretch_mode = 0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Diario" unique_id=1048273535]
+libraries/ = SubResource("AnimationLibrary_thjch")
+
+[node name="ColorRect" type="TextureRect" parent="Diario" unique_id=87009902]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -614.0
+offset_top = -393.0
+offset_right = 614.0
+offset_bottom = 393.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1e-05, 1)
+pivot_offset = Vector2(614, 393)
+texture = ExtResource("14_iwlr2")
+expand_mode = 1
+
 [connection signal="pressed" from="Bar/BotaoDireita" to="." method="_on_botao_direita_pressed"]
 [connection signal="pressed" from="Bar/BotaoEsquerda" to="." method="_on_botao_esquerda_pressed"]
+[connection signal="pressed" from="Diario/DiarioBotao" to="Diario" method="_on_diario_botao_pressed"]
+
+[editable path="Bar/Paredes/Tras/MesaBebum"]
+[editable path="Bar/Paredes/Direita/MesaMeninas"]

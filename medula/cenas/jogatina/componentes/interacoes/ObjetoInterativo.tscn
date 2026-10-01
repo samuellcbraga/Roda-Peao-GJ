@@ -5,13 +5,15 @@ resource_name = "interativoScript"
 script/source = "extends TextureButton
 @export var personagem: String
 
+var caixaDeDialogoPreInstance = preload(\"res://medula/cenas/jogatina/componentes/interacoes/CaixaDeDialogo.tscn\")
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pressed.connect(_on_pressed)
 	mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
 
 func _on_pressed() -> void:
-	var caixa = get_tree().get_first_node_in_group(\"caixaDialogo\")
+	var caixa = get_parent().get_parent().get_parent().get_node(\"CaixadeDialogo\")
 	if caixa == null:
 		push_warning(\"Nenhuma CaixaDeDialogo na cena\")
 		return

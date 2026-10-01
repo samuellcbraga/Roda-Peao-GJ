@@ -58,6 +58,11 @@ var personagens := {
 # toda escolha com 'id' que o jogador fizer fica aqui, ex: {'disse_tonelada': true}
 var escolhas := {}
 
+var palavrasChaves = {
+	'sujeitos': ['Janaína', 'Zé Butico'],
+	'acoes': []
+}
+
 func registrarEscolha(id: String) -> void:
 	if id != '':
 		escolhas[id] = true
