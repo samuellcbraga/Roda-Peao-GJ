@@ -20,6 +20,12 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
+[node name="Direita" parent="Jogatina/Bar/Paredes" parent_id_path=PackedInt32Array(1401306619, 1933006014) index="2" unique_id=199541536]
+visible = false
+
+[node name="Frente" parent="Jogatina/Bar/Paredes" parent_id_path=PackedInt32Array(1401306619, 1933006014) index="3" unique_id=245961603]
+visible = true
+
 [connection signal="pressed" from="Inicio/Iniciar" to="." method="_on_iniciar_pressed"]
 
 [editable path="Inicio"]

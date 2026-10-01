@@ -3,21 +3,19 @@
 [sub_resource type="GDScript" id="GDScript_rn5kp"]
 resource_name = "interativoScript"
 script/source = "extends TextureButton
-@export var nome: String
-@export var retrato: Texture2D
-@export var falas: Array[Falas] = []
+@export var personagem: String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pressed.connect(_on_pressed)
 	mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-	
-func _on_pressed() -> void: 
+
+func _on_pressed() -> void:
 	var caixa = get_tree().get_first_node_in_group(\"caixaDialogo\")
 	if caixa == null:
 		push_warning(\"Nenhuma CaixaDeDialogo na cena\")
 		return
-	caixa.mostrarFalas(nome, retrato, falas)
+	caixa.iniciarConversa(personagem)
 "
 
 [node name="MesaInterativa" type="TextureButton" unique_id=1105394145]

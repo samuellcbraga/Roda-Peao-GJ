@@ -4,15 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://csh36u86iks27" path="res://medula/cenas/jogatina/texturas/paredes/esquerda_placeholder.png" id="2_igwc1"]
 [ext_resource type="Texture2D" uid="uid://d2sboya18an51" path="res://medula/cenas/jogatina/texturas/paredes/tras_placeholder.png" id="3_s34v2"]
 [ext_resource type="Texture2D" uid="uid://b8peb0pnatga7" path="res://medula/cenas/jogatina/texturas/paredes/direita_placeholder.png" id="4_mnwyw"]
-[ext_resource type="Texture2D" uid="uid://vlv8m6oslyka" path="res://medula/personagens/mesas/amigos/mesa-amigos_placeholder.png" id="5_mnwyw"]
 [ext_resource type="Texture2D" uid="uid://c4n2h473nmekq" path="res://medula/cenas/jogatina/texturas/paredes/frente_placeholder.png" id="5_yonwv"]
 [ext_resource type="PackedScene" uid="uid://c5788gjidkqwf" path="res://medula/cenas/jogatina/componentes/interacoes/CaixaDeDialogo.tscn" id="6_sarcl"]
 [ext_resource type="PackedScene" uid="uid://bov6gk37h4oga" path="res://medula/cenas/jogatina/componentes/interacoes/ObjetoInterativo.tscn" id="7_dh8hb"]
 [ext_resource type="Texture2D" uid="uid://d0586h3gy7ciq" path="res://medula/personagens/mesas/meninas/mesa-meninas_placeholder.png" id="9_yonwv"]
-[ext_resource type="Texture2D" uid="uid://xxt2radwvql3" path="res://medula/personagens/pessoas/fulanadetal/fulanadetal-idle.png" id="10_sarcl"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2fdau"]
-load_path = "res://.godot/imported/Amigo1.png-ac8ef86ec98f3a67e374a43618c606f5.ctex"
 
 [node name="Jogatina" type="Control" unique_id=1401306619]
 layout_mode = 3
@@ -59,32 +54,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_s34v2")
 
-[node name="MesaTemp" parent="Bar/Paredes/Tras" unique_id=1105394145 instance=ExtResource("7_dh8hb")]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5998047
-anchor_top = 0.48119682
-anchor_right = 0.9595964
-anchor_bottom = 1.1653447
-offset_left = -36.625
-offset_top = -161.69257
-offset_right = -38.42505
-offset_bottom = -161.57251
-texture_normal = ExtResource("5_mnwyw")
-nome = "Ratinha pesa"
-retrato = SubResource("CompressedTexture2D_2fdau")
-falas = Array[String](["Oi eu sou o tiringa"])
-metadata/_edit_use_anchors_ = true
-
-[node name="CaixadeDiálogo" parent="Bar/Paredes/Tras" unique_id=1393830835 instance=ExtResource("6_sarcl")]
-layout_mode = 1
-offset_left = 252.0
-offset_top = 18.0
-offset_right = 73.0
-offset_bottom = 18.0
-
 [node name="Direita" type="TextureRect" parent="Bar/Paredes" unique_id=199541536]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -105,9 +75,7 @@ offset_top = -161.69257
 offset_right = -38.42505
 offset_bottom = -161.57251
 texture_normal = ExtResource("9_yonwv")
-nome = "Ratinha pesa"
-retrato = ExtResource("10_sarcl")
-falas = Array[String](["Qui qui qui qui quiiiiiii"])
+personagem = "fulanadetal"
 metadata/_edit_use_anchors_ = true
 
 [node name="CaixadeDiálogo" parent="Bar/Paredes/Direita" unique_id=959077882 instance=ExtResource("6_sarcl")]
@@ -118,6 +86,7 @@ offset_right = -53.0
 offset_bottom = 9.0
 
 [node name="Frente" type="TextureRect" parent="Bar/Paredes" unique_id=245961603]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

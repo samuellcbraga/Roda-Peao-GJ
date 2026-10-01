@@ -10,25 +10,33 @@ script/source = "extends Control
 @onready var opcoes: VBoxContainer = $DialogBox/opcoes
 var esperandoEscolha := false
 signal escolhaFeita(id: String)
-var falas: Array[Falas] = []
+var falas: Array = []
+var conversas: Dictionary = {}
 var indice := 0 
 var tween: Tween
+signal final_do_dialogo
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hide()
 
-func mostrarFalas(nomeChar: String, portraitChar: Texture2D, novasFalas: Array[Falas]):
-	if novasFalas.is_empty():
+func iniciarConversa(personagem: String) -> void:
+	if not falas.is_empty():
 		return
-	if falas.is_empty():
-		falas = novasFalas
-		indice = 0
-		nome_char.text = nomeChar
-		sprite_char.texture = portraitChar
-		_mostrarFalasAtual()
-		show()
-		_pop_in()
-signal final_do_dialogo
+	if not atlas.personagens.has(personagem):
+		push_warning(\"Personagem não existe no atlas: \" + personagem)
+		return
+	var dados: Dictionary = atlas.personagens[personagem]
+	conversas = dados['conversas']
+	if not conversas.has('inicio'):
+		push_warning(personagem + \" não tem a conversa 'inicio' no atlas\")
+		return
+	nome_char.text = dados['nome']
+	sprite_char.texture = dados.get('retrato')
+	falas = conversas['inicio']
+	indice = 0
+	_mostrarFalasAtual()
+	show()
+	_pop_in()
 
 func _input(event: InputEvent) -> void:
 	if not visible:
@@ -54,23 +62,29 @@ func limparOpcoes() -> void:
 		filho.queue_free()
 	opcoes.hide()
 	
-func onOpcaoEscolhida( i: int) -> void:
-	var opcao: = falas[indice].opcoes[i]
-	limparOpcoes() 
+func onOpcaoEscolhida(i: int) -> void:
+	var opcao: Dictionary = falas[indice]['opcoes'][i]
+	limparOpcoes()
 	esperandoEscolha = false
-	escolhaFeita.emit(opcao.id)
-	if opcao.falas.is_empty():
+	atlas.registrarEscolha(opcao.get('id', ''))
+	escolhaFeita.emit(opcao.get('id', ''))
+	var proxima: String = opcao.get('vai_para', '')
+	if proxima == '':
+		terminar()
+	elif not conversas.has(proxima):
+		push_warning(\"Conversa não existe: \" + proxima)
 		terminar()
 	else:
-		falas = opcao.falas
+		falas = conversas[proxima]
 		indice = 0
 		_mostrarFalasAtual()
-func mostrarOpcoes(lista: Array[Opcao]) -> void:
+
+func mostrarOpcoes(lista: Array) -> void:
 	limparOpcoes()
 	var primeiro: Button = null
 	for i in lista.size():
 		var botao := Button.new()
-		botao.text = lista[i].texto
+		botao.text = lista[i]['texto']
 		botao.pressed.connect(onOpcaoEscolhida.bind(i))
 		opcoes.add_child(botao)
 		if primeiro == null:
@@ -80,10 +94,11 @@ func mostrarOpcoes(lista: Array[Opcao]) -> void:
 	primeiro.grab_focus()
 
 func _mostrarFalasAtual() -> void:
-	var fala := falas[indice]
-	texto_do_diálogo.text = falas[indice].texto
-	if not fala.opcoes.is_empty():
-		mostrarOpcoes(fala.opcoes)
+	var fala: Dictionary = falas[indice]
+	texto_do_diálogo.text = fala['texto']
+	var lista: Array = fala.get('opcoes', [])
+	if not lista.is_empty():
+		mostrarOpcoes(lista)
 func terminar() -> void:
 	falas = []
 	await _pop_out()
