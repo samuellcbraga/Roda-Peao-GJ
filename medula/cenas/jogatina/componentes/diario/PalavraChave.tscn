@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c8ayd2i28xr7p"]
+
+[ext_resource type="FontFile" uid="uid://bqcqphicajray" path="res://medula/temp/fonte/quartz-ms/QuartzMSRegular.TTF" id="1_ym0av"]
+
+[node name="PalavraChave" type="Label" unique_id=2045853124]
+custom_minimum_size = Vector2(230, 0)
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ym0av")
+theme_override_font_sizes/font_size = 64
+text = "Raimundo"

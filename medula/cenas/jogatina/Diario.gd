@@ -1,9 +1,12 @@
 extends ColorRect
 
+var palavraChaveDiarioInstancia = preload("res://medula/cenas/jogatina/componentes/diario/PalavraChave.tscn")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	for palavrachave in atlas.palavrasChaves.sujeitos:
+		var temporario 
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,4 +20,6 @@ func _input(event: InputEvent) -> void:
 func _on_diario_botao_pressed() -> void:
 	if self.position.y != 0:
 		$AnimationPlayer.play("desce")
+		
+		
 	else: $AnimationPlayer.play("sobe")

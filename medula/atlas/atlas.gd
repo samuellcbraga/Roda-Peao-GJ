@@ -58,10 +58,15 @@ var personagens := {
 # toda escolha com 'id' que o jogador fizer fica aqui, ex: {'disse_tonelada': true}
 var escolhas := {}
 
+func escolhasAleatoriasPalavrasChaves():
+	pass # colocar aqui pra gerar palavras chaves aleatorias
+
 var palavrasChaves = {
 	'sujeitos': ['Janaína', 'Zé Butico'],
-	'acoes': []
+	'acoes': ['se jogou do quinto andar', 'engravidou de Fátima']
 }
+
+var tempoPassado = 0 #começa de 18h30, isso são os minutos
 
 func registrarEscolha(id: String) -> void:
 	if id != '':

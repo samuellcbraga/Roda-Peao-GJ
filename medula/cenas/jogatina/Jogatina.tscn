@@ -44,7 +44,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect:scale")
+tracks/2/path = NodePath("DiarioBook:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -83,7 +83,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("ColorRect:scale")
+tracks/2/path = NodePath("DiarioBook:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -305,15 +305,12 @@ anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -480.0
 offset_top = 1080.0
-offset_bottom = 1244.0015
+offset_bottom = 1244.002
 grow_horizontal = 0
 texture_normal = ExtResource("13_hnops")
 stretch_mode = 0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Diario" unique_id=1048273535]
-libraries/ = SubResource("AnimationLibrary_thjch")
-
-[node name="ColorRect" type="TextureRect" parent="Diario" unique_id=87009902]
+[node name="DiarioBook" type="TextureRect" parent="Diario" unique_id=87009902]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -330,6 +327,40 @@ scale = Vector2(1e-05, 1)
 pivot_offset = Vector2(614, 393)
 texture = ExtResource("14_iwlr2")
 expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Diario" unique_id=1048273535]
+libraries/ = SubResource("AnimationLibrary_thjch")
+
+[node name="Sujeitos" type="FlowContainer" parent="Diario" unique_id=1064699875]
+custom_minimum_size = Vector2(456, 657)
+custom_maximum_size = Vector2(456, 657)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -502.0
+offset_top = -333.0
+offset_right = -46.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Acoes" type="GridContainer" parent="Diario" unique_id=780951666]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 66.0
+offset_top = -330.0
+offset_right = 525.0
+offset_bottom = 327.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 6
 
 [connection signal="pressed" from="Bar/BotaoDireita" to="." method="_on_botao_direita_pressed"]
 [connection signal="pressed" from="Bar/BotaoEsquerda" to="." method="_on_botao_esquerda_pressed"]
