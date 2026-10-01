@@ -7,26 +7,33 @@ script/source = "extends Control
 @onready var texto_do_diálogo: RichTextLabel = $DialogBox/PanelContainer/MarginContainer/textoDoDiálogo
 @onready var sprite_char: TextureRect = $spriteChar
 @onready var caixa: Control = $DialogBox
-var falas: Array[String] = []
+@onready var opcoes: VBoxContainer = $DialogBox/opcoes
+var esperandoEscolha := false
+signal escolhaFeita(id: String)
+var falas: Array[Falas] = []
 var indice := 0 
 var tween: Tween
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hide()
 
-func mostrarFalas(nomeChar: String, portraitChar: Texture2D, novasFalas: Array[String]):
+func mostrarFalas(nomeChar: String, portraitChar: Texture2D, novasFalas: Array[Falas]):
+	if novasFalas.is_empty():
+		return
 	if falas.is_empty():
 		falas = novasFalas
 		indice = 0
 		nome_char.text = nomeChar
 		sprite_char.texture = portraitChar
-		texto_do_diálogo.text = falas[indice]
+		_mostrarFalasAtual()
 		show()
 		_pop_in()
 signal final_do_dialogo
 
 func _input(event: InputEvent) -> void:
 	if not visible:
+		return
+	if esperandoEscolha:
 		return
 	if tween and tween.is_running():
 		return
@@ -37,12 +44,51 @@ func _input(event: InputEvent) -> void:
 func avancar() -> void:
 	indice += 1
 	if indice >= falas.size():
-		hide()
-		falas = []
-		await _pop_out()
-		final_do_dialogo.emit()
+		terminar()
 	else:
-		texto_do_diálogo.text = falas[indice]
+		_mostrarFalasAtual()
+
+
+func limparOpcoes() -> void:
+	for filho in opcoes.get_children():
+		filho.queue_free()
+	opcoes.hide()
+	
+func onOpcaoEscolhida( i: int) -> void:
+	var opcao: = falas[indice].opcoes[i]
+	limparOpcoes() 
+	esperandoEscolha = false
+	escolhaFeita.emit(opcao.id)
+	if opcao.falas.is_empty():
+		terminar()
+	else:
+		falas = opcao.falas
+		indice = 0
+		_mostrarFalasAtual()
+func mostrarOpcoes(lista: Array[Opcao]) -> void:
+	limparOpcoes()
+	var primeiro: Button = null
+	for i in lista.size():
+		var botao := Button.new()
+		botao.text = lista[i].texto
+		botao.pressed.connect(onOpcaoEscolhida.bind(i))
+		opcoes.add_child(botao)
+		if primeiro == null:
+			primeiro = botao
+	opcoes.show()
+	esperandoEscolha = true
+	primeiro.grab_focus()
+
+func _mostrarFalasAtual() -> void:
+	var fala := falas[indice]
+	texto_do_diálogo.text = falas[indice].texto
+	if not fala.opcoes.is_empty():
+		mostrarOpcoes(fala.opcoes)
+func terminar() -> void:
+	falas = []
+	await _pop_out()
+	hide()
+	final_do_dialogo.emit()
 
 func _pop_in() -> void:                                           
 	caixa.pivot_offset = caixa.size / 2
@@ -142,3 +188,17 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_xbhkt")
 
 [node name="nomeChar" type="Label" parent="DialogBox/nameTag" unique_id=1189778179]
 layout_mode = 2
+
+[node name="opcoes" type="VBoxContainer" parent="DialogBox" unique_id=1207634952]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -430.0
+offset_top = -20.0
+offset_right = -30.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 8

@@ -5,7 +5,7 @@ resource_name = "interativoScript"
 script/source = "extends TextureButton
 @export var nome: String
 @export var retrato: Texture2D
-@export var falas: Array[String] = []
+@export var falas: Array[Falas] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
