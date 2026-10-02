@@ -398,7 +398,9 @@ vertical_alignment = 1
 [node name="Cronometro" type="TextureProgressBar" parent="RelogioHolder/HBoxContainer" unique_id=173315834]
 layout_mode = 2
 size_flags_vertical = 4
-value = 100.0
+max_value = 1.0
+step = 0.01
+value = 1.0
 fill_mode = 4
 texture_progress = ExtResource("10_mnwyw")
 
@@ -491,6 +493,18 @@ theme_override_constants/v_separation = 24
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Diario" unique_id=1048273535]
 libraries/ = SubResource("AnimationLibrary_thjch")
+
+[node name="PopUpsContainer" type="VBoxContainer" parent="." unique_id=1393331043]
+custom_maximum_size = Vector2(1440, -1)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -480.0
+offset_top = 107.0
+offset_bottom = 1072.0
+grow_horizontal = 0
+mouse_filter = 2
 
 [connection signal="pressed" from="Bar/BotaoDireita" to="." method="_on_botao_direita_pressed"]
 [connection signal="pressed" from="Bar/BotaoEsquerda" to="." method="_on_botao_esquerda_pressed"]

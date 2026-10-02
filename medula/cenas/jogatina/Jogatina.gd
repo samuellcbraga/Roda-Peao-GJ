@@ -1,6 +1,7 @@
 extends Control
 
 var olhandoPra = 'Frente'
+var popUpPreInstancia = preload("res://medula/cenas/jogatina/componentes/popups/PopUp.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -9,11 +10,20 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-#
+	$RelogioHolder/HBoxContainer/Hora.text = atlas.formatarTempoPassado()
+	$RelogioHolder/HBoxContainer/Cronometro.value = atlas.tempoPassado / 210.0
+
 #func sfxHandler(qual):
 	#
 
+func popUpHandler(icon, texto):
+	var popup = popUpPreInstancia.instantiate()
+	popup.get_node("Icone").texture = load("res://medula/cenas/jogatina/componentes/popups/icones/"+icon+".png")
+	popup.get_node("Aviso").text = texto
+	$PopUpsContainer.add_child(popup)
+	popup.get_node("AnimationPlayer").play("pop")
+	
+	
 
 func movimentoHandler(direcao : String):
 	if direcao == 'direita':
@@ -59,6 +69,7 @@ func movimentoHandler(direcao : String):
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_right"):
+		popUpHandler('diario', 'Novas entradas no diário!')
 		_on_botao_direita_pressed()
 	elif event.is_action_pressed("ui_left"):
 		_on_botao_esquerda_pressed()

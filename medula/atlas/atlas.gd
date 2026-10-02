@@ -28,6 +28,8 @@ extends Node
 		
 	
 
+var tempoPassado = 30 #começa de 18h30, isso são os minutos a partir de 18h30
+
 var personagens := {
 	'barman': {
 		'nome': 'Barman',
@@ -114,6 +116,17 @@ var personagens := {
 		}
 	},
 	
+		'amigoes': {
+		'nome': 'Amigos da obra',
+		'poses': {'idle': preload('res://medula/personagens/mesas/amigos/mesa-amigos_placeholder.png')},
+		'speech': preload('res://medula/personagens/pessoas/meninas/bla.mp3'),
+		'horario': [0, 6767],
+		'conversas': {
+			'inicio': [
+				{'texto': 'Oi Zé! Como tá indo a investigação?'}
+			]
+		},
+	
 	'meninas': {
 		'nome': 'Grupo de Meninas',
 		'poses': {'idle': preload('res://medula/personagens/pessoas/meninas/idle.png')},
@@ -137,22 +150,22 @@ var personagens := {
 		},
 	},
 	
-	
-	'amigoes': {
-		'nome': 'Amigos da obra',
-		'poses': {'idle': preload('res://medula/personagens/mesas/amigos/mesa-amigos_placeholder.png')},
-		'speech': preload('res://medula/personagens/pessoas/meninas/bla.mp3'),
-		'horario': [0, 6767],
-		'conversas': {
-			'inicio': [
-				{'texto': 'Oi Zé! Como tá indo a investigação?'}
-			]
-		}
-	},
-}
-
+	}}
 # toda escolha com 'id' que o jogador fizer fica aqui, ex: {'disse_tonelada': true}
 var escolhas := {}
+
+func formatarTempoPassado():
+	var horas = 18
+	var minutos = 30
+	
+	horas += round(tempoPassado / 60)
+	minutos += tempoPassado % 60
+	if minutos > 59:
+		horas += 1
+		minutos -= 60
+	
+	
+	return str(horas)+'h'+str("%02d" % minutos)
 
 func escolhasAleatoriasPalavrasChaves():
 	pass # colocar aqui pra gerar palavras chaves aleatorias
@@ -162,7 +175,7 @@ var palavrasChaves = {
 	'acoes': ['se jogou do quinto andar', 'engravidou de Fátima']
 }
 
-var tempoPassado = 0 #começa de 18h30, isso são os minutos a partir de 18h30
+
 
 func registrarEscolha(id: String) -> void:
 	if id != '':
