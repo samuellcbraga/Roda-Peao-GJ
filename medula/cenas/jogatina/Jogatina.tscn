@@ -21,6 +21,8 @@
 [ext_resource type="Texture2D" uid="uid://b2mntvslsirn1" path="res://medula/cenas/jogatina/componentes/diario/texturas/fundo-diario_placeholder.png" id="12_iwlr2"]
 [ext_resource type="Texture2D" uid="uid://cmhel3h8t5mvc" path="res://medula/cenas/jogatina/componentes/diario/texturas/diario-botao.png" id="13_hnops"]
 [ext_resource type="Texture2D" uid="uid://qfgpechjsgkk" path="res://medula/cenas/jogatina/componentes/diario/texturas/diario.png" id="14_iwlr2"]
+[ext_resource type="AudioStream" uid="uid://b0q188ereiji3" path="res://medula/sfx/ambs/geral.mp3" id="22_gmfi3"]
+[ext_resource type="AudioStream" uid="uid://bq1785rb2m2q1" path="res://medula/sfx/ambs/geral2.mp3" id="23_v8gop"]
 
 [sub_resource type="Animation" id="Animation_am7br"]
 length = 0.001
@@ -133,6 +135,94 @@ _data = {
 &"RESET": SubResource("Animation_am7br"),
 &"desce": SubResource("Animation_2bkaf"),
 &"sobe": SubResource("Animation_dh8hb")
+}
+
+[sub_resource type="Animation" id="Animation_wbxgb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("QuebraGalho:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_fn5id"]
+resource_name = "playing"
+length = 80.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("QuebraGalho:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:volume_db")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(38.109627, 40.542156, 42.433334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-6.278000000000006, -80.0, -6.278000000000006]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("..")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(40.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"recarregarAmbiencia"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_opc6m"]
+_data = {
+&"RESET": SubResource("Animation_wbxgb"),
+&"playing": SubResource("Animation_fn5id")
 }
 
 [node name="Jogatina" type="Control" unique_id=1401306619]
@@ -505,6 +595,17 @@ offset_top = 107.0
 offset_bottom = 1072.0
 grow_horizontal = 0
 mouse_filter = 2
+
+[node name="AmbsPlayer" type="AudioStreamPlayer" parent="." unique_id=1770073095]
+stream = ExtResource("22_gmfi3")
+volume_db = -17.902
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AmbsPlayer" unique_id=571680674]
+libraries/ = SubResource("AnimationLibrary_opc6m")
+autoplay = &"RESET"
+
+[node name="QuebraGalho" type="AudioStreamPlayer" parent="AmbsPlayer" unique_id=906707647]
+stream = ExtResource("23_v8gop")
 
 [connection signal="pressed" from="Bar/BotaoDireita" to="." method="_on_botao_direita_pressed"]
 [connection signal="pressed" from="Bar/BotaoEsquerda" to="." method="_on_botao_esquerda_pressed"]

@@ -175,6 +175,11 @@ var palavrasChaves = {
 	'acoes': ['se jogou do quinto andar', 'engravidou de Fátima']
 }
 
+var sfx = {
+	'whoosh': preload("res://medula/sfx/whoosh.mp3"),
+	'tick': preload("res://medula/sfx/tick.mp3"),
+	
+}
 
 
 func registrarEscolha(id: String) -> void:

@@ -13,8 +13,12 @@ func _process(delta: float) -> void:
 	$RelogioHolder/HBoxContainer/Hora.text = atlas.formatarTempoPassado()
 	$RelogioHolder/HBoxContainer/Cronometro.value = atlas.tempoPassado / 210.0
 
-#func sfxHandler(qual):
-	#
+func sfxHandler(qual):
+	var player = AudioStreamPlayer.new()
+	player.stream = qual
+	player.finished.connect(player.queue_free)
+	self.add_child(player)
+	player.play()
 
 func popUpHandler(icon, texto):
 	var popup = popUpPreInstancia.instantiate()
@@ -26,6 +30,7 @@ func popUpHandler(icon, texto):
 	
 
 func movimentoHandler(direcao : String):
+	sfxHandler(atlas.sfx.whoosh)
 	if direcao == 'direita':
 		match olhandoPra:
 			'Frente':
@@ -76,7 +81,9 @@ func _input(event: InputEvent) -> void:
 
 func _on_botao_esquerda_pressed() -> void:
 	movimentoHandler('esquerda')
-
-
 func _on_botao_direita_pressed() -> void:
 	movimentoHandler('direita')
+
+
+func recarregarAmbiencia():
+	$AmbsPlayer.seek(randf_range(0, $AmbsPlayer.stream.get_length()))
