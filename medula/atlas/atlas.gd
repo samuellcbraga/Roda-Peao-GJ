@@ -126,7 +126,7 @@ var personagens := {
 				{'texto': 'Oi Zé! Como tá indo a investigação?'}
 			]
 		},
-	
+	},
 	'meninas': {
 		'nome': 'Grupo de Meninas',
 		'poses': {'idle': preload('res://medula/personagens/pessoas/meninas/idle.png')},
@@ -150,7 +150,7 @@ var personagens := {
 		},
 	},
 	
-	}}
+	}
 # toda escolha com 'id' que o jogador fizer fica aqui, ex: {'disse_tonelada': true}
 var escolhas := {}
 
