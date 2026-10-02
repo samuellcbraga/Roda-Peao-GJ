@@ -13,4 +13,4 @@ func _process(delta: float) -> void:
 
 func _on_iniciar_pressed() -> void:
 	$Inicio.hide()
-	$Jogatina.show()
+	$Intro.show()

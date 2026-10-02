@@ -183,7 +183,7 @@ offset_right = -38.42505
 offset_bottom = -161.57251
 texture_normal = ExtResource("5_s34v2")
 stretch_mode = 0
-personagem = "biu"
+personagem = "amigoes"
 metadata/_edit_use_anchors_ = true
 
 [node name="MesaEngravatados" parent="Bar/Paredes/Esquerda" unique_id=1992314958 instance=ExtResource("7_dh8hb")]
@@ -243,7 +243,7 @@ offset_bottom = -20.348633
 texture_normal = ExtResource("8_08tet")
 ignore_texture_size = true
 stretch_mode = 0
-personagem = "bebum"
+personagem = "biu"
 metadata/_edit_use_anchors_ = true
 
 [node name="Bitu" parent="Bar/Paredes/Tras" unique_id=351604612 instance=ExtResource("7_dh8hb")]

@@ -97,13 +97,13 @@ var personagens := {
 		'horario': [90, 150],
 		'conversas': {
 			'inicio': [
-				{'texto': 'tchê e pir e brother, paixxxx, ei paizão'}
+				{'texto': 'auu auuu auuuuu'}
 			]
 		}
 	},
 	
-	'bebum': {
-		'nome': 'Bebum',
+	'biu': {
+		'nome': 'Seu Biu Pingão',
 		'poses': {'idle': preload('res://medula/personagens/interativos/bebum/idle.jpg')},
 		'speech': preload('res://medula/personagens/interativos/bebum/bla.mp3'),
 		'horario': [0, 6767],
@@ -138,18 +138,16 @@ var personagens := {
 	},
 	
 	
-	'biu': {
-	'nome': 'Seu Biu Pingão',
-	'poses': {'idle': preload('res://medula/personagens/pessoas/biu/idle.png')},
-	'speech': preload('res://medula/personagens/pessoas/meninas/bla.mp3'),
-	'horario': [0, 6767],
-	'conversas': {
-		'inicio': [
-			{'texto': 'Oi eu sou o seu biu'},
-		],
-	},
-	
-	
+	'amigoes': {
+		'nome': 'Amigos da obra',
+		'poses': {'idle': preload('res://medula/personagens/mesas/amigos/mesa-amigos_placeholder.png')},
+		'speech': preload('res://medula/personagens/pessoas/meninas/bla.mp3'),
+		'horario': [0, 6767],
+		'conversas': {
+			'inicio': [
+				{'texto': 'Oi Zé! Como tá indo a investigação?'}
+			]
+		}
 	},
 }
 

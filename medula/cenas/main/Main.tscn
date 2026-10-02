@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bvsgw6xdk5yx" path="res://medula/cenas/main/Main.gd" id="1_aqkb7"]
 [ext_resource type="PackedScene" uid="uid://ckqtehj8ncvt5" path="res://medula/cenas/jogatina/Jogatina.tscn" id="2_4dojx"]
 [ext_resource type="PackedScene" uid="uid://2hvtfgks8fkt" path="res://medula/cenas/inicio/Inicio.tscn" id="2_aqkb7"]
+[ext_resource type="PackedScene" uid="uid://d2mqe0jjb2tnj" path="res://medula/cenas/intro/intro.tscn" id="4_f8i07"]
 
 [node name="Main" type="Control" unique_id=1515211865]
 layout_mode = 3
@@ -20,21 +21,23 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
-[node name="MesaBebum" parent="Jogatina/Bar/Paredes/Tras" parent_id_path=PackedInt32Array(1401306619, 1637826727) index="0" unique_id=1105394145]
+[node name="MesaAmigos" parent="Jogatina/Bar/Paredes/Esquerda" parent_id_path=PackedInt32Array(1401306619, 966168995) index="0" unique_id=1105394145]
 personagem = "seu biu"
 
-[node name="Direita" parent="Jogatina/Bar/Paredes" parent_id_path=PackedInt32Array(1401306619, 1933006014) index="2" unique_id=199541536]
+[node name="Intro" parent="." unique_id=1425991048 instance=ExtResource("4_f8i07")]
 visible = false
-
-[node name="MesaMeninas" parent="Jogatina/Bar/Paredes/Direita" index="0" unique_id=1871015727]
-personagem = "meninas"
-
-[node name="Frente" parent="Jogatina/Bar/Paredes" parent_id_path=PackedInt32Array(1401306619, 1933006014) index="3" unique_id=245961603]
-visible = true
+layout_mode = 1
 
 [connection signal="pressed" from="Inicio/Iniciar" to="." method="_on_iniciar_pressed"]
 
 [editable path="Inicio"]
 [editable path="Jogatina"]
-[editable path="Jogatina/Bar/Paredes/Tras/MesaBebum"]
+[editable path="Jogatina/Bar/Paredes/Esquerda/MesaAmigos"]
+[editable path="Jogatina/Bar/Paredes/Esquerda/MesaEngravatados"]
+[editable path="Jogatina/Bar/Paredes/Tras/MesaTuristas"]
+[editable path="Jogatina/Bar/Paredes/Tras/Bebum"]
+[editable path="Jogatina/Bar/Paredes/Tras/Bitu"]
 [editable path="Jogatina/Bar/Paredes/Direita/MesaMeninas"]
+[editable path="Jogatina/Bar/Paredes/Direita/MesaUniversitarios"]
+[editable path="Jogatina/Bar/Paredes/Frente/Barman"]
+[editable path="Jogatina/Bar/Paredes/Frente/Enzo"]

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://d2mqe0jjb2tnj"]
+
+[ext_resource type="Script" uid="uid://drg4qgpyp48px" path="res://medula/cenas/intro/intro.gd" id="1_nl2vw"]
+[ext_resource type="Texture2D" uid="uid://b63aese34jomk" path="res://medula/cenas/intro/texturas/background_intro.png" id="2_b2n38"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nl2vw"]
+font_size = 56
+font_color = Color(0, 0, 0, 1)
+
+[node name="Intro" type="Control" unique_id=1425991048]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nl2vw")
+
+[node name="Background_Intro" type="TextureRect" parent="." unique_id=855630282]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_b2n38")
+
+[node name="Texto" type="Label" parent="." unique_id=87252599]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 274.0
+offset_right = 1707.0
+offset_bottom = 769.0
+text = "Na manhã do dia de hoje, algo aconteceu."
+label_settings = SubResource("LabelSettings_nl2vw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Botao_Intro" type="Button" parent="." unique_id=1856355560]
+layout_mode = 0
+offset_left = 1590.0
+offset_top = 654.0
+offset_right = 1685.0
+offset_bottom = 753.0
+text = "->"
+
+[connection signal="pressed" from="Botao_Intro" to="." method="_on_botao_intro_pressed"]
