@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uvasuhfxgwbi"
-path="res://.godot/imported/Amigo1.png-ff9dde4a9db2f2bb4f0d3df4ba08d204.ctex"
+uid="uid://caufmtri0k2vp"
+path="res://.godot/imported/idle.png-bb85234a27a1e36da40089b49b4d969c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://medula/personagens/pessoas/amigo/Amigo1.png"
-dest_files=["res://.godot/imported/Amigo1.png-ff9dde4a9db2f2bb4f0d3df4ba08d204.ctex"]
+source_file="res://medula/personagens/interativos/bitu/idle.png"
+dest_files=["res://.godot/imported/idle.png-bb85234a27a1e36da40089b49b4d969c.ctex"]
 
 [params]
 

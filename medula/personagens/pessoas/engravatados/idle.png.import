@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b54bo6dkpxowq"
-path="res://.godot/imported/mesa-amigos_placeholder.png-a163ced11ab2b92cb02420a0140ce439.ctex"
+uid="uid://d0kyhbcslh27h"
+path="res://.godot/imported/idle.png-31d7e01ceef26f49ca7f603ad5297180.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://medula/personagens/mesas/amigos/mesa-amigos_placeholder.png"
-dest_files=["res://.godot/imported/mesa-amigos_placeholder.png-a163ced11ab2b92cb02420a0140ce439.ctex"]
+source_file="res://medula/personagens/pessoas/engravatados/idle.png"
+dest_files=["res://.godot/imported/idle.png-31d7e01ceef26f49ca7f603ad5297180.ctex"]
 
 [params]
 

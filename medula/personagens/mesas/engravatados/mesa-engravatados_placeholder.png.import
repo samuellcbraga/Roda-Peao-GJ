@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cctdxmlbc1jho"
-path="res://.godot/imported/mesa_enzo_placeholder.png-cdad3dc43b86b373644a4a2d6ece1a02.ctex"
+uid="uid://b17rlm6rve6mc"
+path="res://.godot/imported/mesa-engravatados_placeholder.png-8dc21895bb5152b3dda6a2c8a7660dd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://medula/personagens/mesas/mesa_enzo_placeholder.png"
-dest_files=["res://.godot/imported/mesa_enzo_placeholder.png-cdad3dc43b86b373644a4a2d6ece1a02.ctex"]
+source_file="res://medula/personagens/mesas/engravatados/mesa-engravatados_placeholder.png"
+dest_files=["res://.godot/imported/mesa-engravatados_placeholder.png-8dc21895bb5152b3dda6a2c8a7660dd7.ctex"]
 
 [params]
 

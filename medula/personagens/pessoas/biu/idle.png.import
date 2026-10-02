@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lffvphcb8fi1"
-path="res://.godot/imported/Meninas_Sprite.png-89582c9b65cd7e58bd63fecb6022dd24.ctex"
+uid="uid://biydydxghldyj"
+path="res://.godot/imported/idle.png-8f0fbbfc6362cb7225fe87ed6a32f31c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://medula/personagens/pessoas/Meninas_Sprite.png"
-dest_files=["res://.godot/imported/Meninas_Sprite.png-89582c9b65cd7e58bd63fecb6022dd24.ctex"]
+source_file="res://medula/personagens/pessoas/biu/idle.png"
+dest_files=["res://.godot/imported/idle.png-8f0fbbfc6362cb7225fe87ed6a32f31c.ctex"]
 
 [params]
 

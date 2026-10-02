@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjmi3wtrwnd33"
-path="res://.godot/imported/Janaina_Sprite.png-accaeed68ad072cadcb590762becfa97.ctex"
+uid="uid://45yeay1ev1vc"
+path="res://.godot/imported/idle.png-47c66838a9feb0037fee3e2d0a65a32e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://medula/personagens/pessoas/Janaina_Sprite.png"
-dest_files=["res://.godot/imported/Janaina_Sprite.png-accaeed68ad072cadcb590762becfa97.ctex"]
+source_file="res://medula/personagens/pessoas/meninas/idle.png"
+dest_files=["res://.godot/imported/idle.png-47c66838a9feb0037fee3e2d0a65a32e.ctex"]
 
 [params]
 

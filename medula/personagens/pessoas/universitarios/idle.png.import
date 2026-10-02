@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xxt2radwvql3"
-path="res://.godot/imported/fulanadetal-idle.png-9280176a12d3aa762e6b90287ed45505.ctex"
+uid="uid://dn1ghtwnavot2"
+path="res://.godot/imported/idle.png-e19d1a14166b7c64a168cb3c5105e0bc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://medula/personagens/pessoas/fulanadetal/fulanadetal-idle.png"
-dest_files=["res://.godot/imported/fulanadetal-idle.png-9280176a12d3aa762e6b90287ed45505.ctex"]
+source_file="res://medula/personagens/pessoas/universitarios/idle.png"
+dest_files=["res://.godot/imported/idle.png-e19d1a14166b7c64a168cb3c5105e0bc.ctex"]
 
 [params]
 

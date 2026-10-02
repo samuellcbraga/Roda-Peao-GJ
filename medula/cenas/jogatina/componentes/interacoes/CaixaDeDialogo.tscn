@@ -31,7 +31,8 @@ func iniciarConversa(personagem: String) -> void:
 		push_warning(personagem + \" não tem a conversa 'inicio' no atlas\")
 		return
 	nome_char.text = dados['nome']
-	sprite_char.texture = dados.get('retrato')
+	sprite_char.texture = dados['poses']['idle']
+	$Speech.stream = dados['speech']
 	falas = conversas['inicio']
 	indice = 0
 	_mostrarFalasAtual()
@@ -95,7 +96,8 @@ func mostrarOpcoes(lista: Array) -> void:
 
 func _mostrarFalasAtual() -> void:
 	var fala: Dictionary = falas[indice]
-	texto_do_diálogo.text = fala['texto']
+	texto_do_diálogo.text = fala['texto'] ## colocar animação de scroll na fala
+	$Speech.play()
 	var lista: Array = fala.get('opcoes', [])
 	if not lista.is_empty():
 		mostrarOpcoes(lista)
@@ -103,6 +105,7 @@ func terminar() -> void:
 	falas = []
 	await _pop_out()
 	hide()
+	$Speech.stop()
 	final_do_dialogo.emit()
 
 func _pop_in() -> void:                                           
@@ -152,17 +155,20 @@ color = Color(0, 0, 0, 0.43137255)
 script = SubResource("GDScript_86cne")
 
 [node name="spriteChar" type="TextureRect" parent="." unique_id=327323536]
+custom_maximum_size = Vector2(920, 920)
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.032118056
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 0.032118056
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = -360.0
-offset_right = 400.0
-offset_bottom = 360.0
+offset_left = -811.0
+offset_top = -483.0
+offset_right = 109.0
+offset_bottom = 437.0
+grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+stretch_mode = 5
 
 [node name="DialogBox" type="Control" parent="." unique_id=1262844839]
 layout_mode = 1
@@ -217,3 +223,5 @@ offset_bottom = -20.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_constants/separation = 8
+
+[node name="Speech" type="AudioStreamPlayer" parent="." unique_id=1498560387]

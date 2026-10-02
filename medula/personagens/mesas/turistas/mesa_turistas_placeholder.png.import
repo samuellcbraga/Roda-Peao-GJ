@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cnqg40v45aww8"
-path="res://.godot/imported/mesa_turistas_placeholder.png-8a7852fb307b042a5d8e34c1e58a2e8c.ctex"
+path="res://.godot/imported/mesa_turistas_placeholder.png-b7d119b619aa932423694ae2bd1f8ee2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://medula/personagens/mesas/mesa_turistas_placeholder.png"
-dest_files=["res://.godot/imported/mesa_turistas_placeholder.png-8a7852fb307b042a5d8e34c1e58a2e8c.ctex"]
+source_file="res://medula/personagens/mesas/turistas/mesa_turistas_placeholder.png"
+dest_files=["res://.godot/imported/mesa_turistas_placeholder.png-b7d119b619aa932423694ae2bd1f8ee2.ctex"]
 
 [params]
 

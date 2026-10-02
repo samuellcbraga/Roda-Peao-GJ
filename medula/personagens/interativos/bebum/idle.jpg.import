@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwpvkmyrwe4c6"
-path="res://.godot/imported/Turistas_Sprite.png-191a2c242b3283c36544ac42259aaf1c.ctex"
+uid="uid://clf4qctwhuqjv"
+path="res://.godot/imported/idle.jpg-e63394b871bf932efea76ad132777718.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://medula/personagens/pessoas/Turistas_Sprite.png"
-dest_files=["res://.godot/imported/Turistas_Sprite.png-191a2c242b3283c36544ac42259aaf1c.ctex"]
+source_file="res://medula/personagens/interativos/bebum/idle.jpg"
+dest_files=["res://.godot/imported/idle.jpg-e63394b871bf932efea76ad132777718.ctex"]
 
 [params]
 

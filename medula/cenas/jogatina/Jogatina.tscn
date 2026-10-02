@@ -4,12 +4,19 @@
 [ext_resource type="Texture2D" uid="uid://csh36u86iks27" path="res://medula/cenas/jogatina/componentes/paredes/esquerda_placeholder.png" id="2_igwc1"]
 [ext_resource type="Texture2D" uid="uid://d2sboya18an51" path="res://medula/cenas/jogatina/componentes/paredes/tras_placeholder.png" id="3_s34v2"]
 [ext_resource type="Texture2D" uid="uid://b8peb0pnatga7" path="res://medula/cenas/jogatina/componentes/paredes/direita_placeholder.png" id="4_mnwyw"]
-[ext_resource type="Texture2D" uid="uid://vlv8m6oslyka" path="res://medula/personagens/mesas/amigos/mesa-amigos_placeholder.png" id="5_s34v2"]
+[ext_resource type="Texture2D" uid="uid://b17rlm6rve6mc" path="res://medula/personagens/mesas/engravatados/mesa-engravatados_placeholder.png" id="5_am7br"]
+[ext_resource type="Texture2D" uid="uid://b54bo6dkpxowq" path="res://medula/personagens/mesas/amigos/mesa-amigos_placeholder.png" id="5_s34v2"]
 [ext_resource type="Texture2D" uid="uid://c4n2h473nmekq" path="res://medula/cenas/jogatina/componentes/paredes/frente_placeholder.png" id="5_yonwv"]
 [ext_resource type="PackedScene" uid="uid://c5788gjidkqwf" path="res://medula/cenas/jogatina/componentes/interacoes/CaixaDeDialogo.tscn" id="6_sarcl"]
 [ext_resource type="PackedScene" uid="uid://bov6gk37h4oga" path="res://medula/cenas/jogatina/componentes/interacoes/ObjetoInterativo.tscn" id="7_dh8hb"]
+[ext_resource type="Texture2D" uid="uid://cnqg40v45aww8" path="res://medula/personagens/mesas/turistas/mesa_turistas_placeholder.png" id="7_hhb71"]
+[ext_resource type="Texture2D" uid="uid://clf4qctwhuqjv" path="res://medula/personagens/interativos/bebum/idle.jpg" id="8_08tet"]
+[ext_resource type="Texture2D" uid="uid://caufmtri0k2vp" path="res://medula/personagens/interativos/bitu/idle.png" id="8_c05uh"]
+[ext_resource type="Texture2D" uid="uid://ci6ed0j1b50oh" path="res://medula/personagens/mesas/barman/barman_placeholder.png" id="9_hnops"]
 [ext_resource type="Texture2D" uid="uid://d0586h3gy7ciq" path="res://medula/personagens/mesas/meninas/mesa-meninas_placeholder.png" id="9_yonwv"]
 [ext_resource type="Texture2D" uid="uid://cyqqlmf2moyfw" path="res://icon.svg" id="10_mnwyw"]
+[ext_resource type="Texture2D" uid="uid://d4g3xwbk8nlm4" path="res://medula/personagens/pessoas/enzo/idle.png" id="11_2bkaf"]
+[ext_resource type="Texture2D" uid="uid://swcgoomo4q8f" path="res://medula/personagens/mesas/universitarios/mesa-universitarios_placeholder.png" id="11_08tet"]
 [ext_resource type="Script" uid="uid://byyxk0a4hml5q" path="res://medula/cenas/jogatina/componentes/diario/Diario.gd" id="11_dh8hb"]
 [ext_resource type="Texture2D" uid="uid://b2mntvslsirn1" path="res://medula/cenas/jogatina/componentes/diario/texturas/fundo-diario_placeholder.png" id="12_iwlr2"]
 [ext_resource type="Texture2D" uid="uid://cmhel3h8t5mvc" path="res://medula/cenas/jogatina/componentes/diario/texturas/diario-botao.png" id="13_hnops"]
@@ -163,6 +170,38 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_igwc1")
 
+[node name="MesaAmigos" parent="Bar/Paredes/Esquerda" unique_id=1105394145 instance=ExtResource("7_dh8hb")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.07167972
+anchor_top = 0.44230792
+anchor_right = 0.53407556
+anchor_bottom = 1.1264558
+offset_left = -36.62506
+offset_top = -161.69257
+offset_right = -38.42505
+offset_bottom = -161.57251
+texture_normal = ExtResource("5_s34v2")
+stretch_mode = 0
+personagem = "biu"
+metadata/_edit_use_anchors_ = true
+
+[node name="MesaEngravatados" parent="Bar/Paredes/Esquerda" unique_id=1992314958 instance=ExtResource("7_dh8hb")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.54303384
+anchor_top = 0.45341903
+anchor_right = 1.0054297
+anchor_bottom = 1.1375669
+offset_left = -36.62506
+offset_top = -161.69257
+offset_right = -38.42505
+offset_bottom = -161.57251
+texture_normal = ExtResource("5_am7br")
+stretch_mode = 0
+personagem = "engravatado"
+metadata/_edit_use_anchors_ = true
+
 [node name="Tras" type="TextureRect" parent="Bar/Paredes" unique_id=1637826727]
 visible = false
 layout_mode = 1
@@ -173,22 +212,59 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_s34v2")
 
-[node name="MesaBebum" parent="Bar/Paredes/Tras" unique_id=1105394145 instance=ExtResource("7_dh8hb")]
+[node name="MesaTuristas" parent="Bar/Paredes/Tras" unique_id=171622625 instance=ExtResource("7_dh8hb")]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.12688805
-anchor_top = 0.53582644
-anchor_right = 0.4866797
-anchor_bottom = 1.2199743
-offset_left = -36.62506
-offset_top = -161.69257
-offset_right = -38.42505
-offset_bottom = -161.57251
-texture_normal = ExtResource("5_s34v2")
-personagem = "amigo"
+anchor_left = 0.0121168615
+anchor_top = 0.52821183
+anchor_right = 0.30367938
+anchor_bottom = 1.0327302
+offset_left = 26.735626
+offset_top = -20.46875
+offset_right = 24.935608
+offset_bottom = -20.348633
+texture_normal = ExtResource("7_hhb71")
+ignore_texture_size = true
+stretch_mode = 0
+personagem = "turistas"
+metadata/_edit_use_anchors_ = true
+
+[node name="Bebum" parent="Bar/Paredes/Tras" unique_id=251016928 instance=ExtResource("7_dh8hb")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.79336685
+anchor_top = 0.51432294
+anchor_right = 0.9573252
+anchor_bottom = 0.92532283
+offset_left = 26.735596
+offset_top = -20.46875
+offset_right = 24.935547
+offset_bottom = -20.348633
+texture_normal = ExtResource("8_08tet")
+ignore_texture_size = true
+stretch_mode = 0
+personagem = "bebum"
+metadata/_edit_use_anchors_ = true
+
+[node name="Bitu" parent="Bar/Paredes/Tras" unique_id=351604612 instance=ExtResource("7_dh8hb")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.6152419
+anchor_top = 0.7939525
+anchor_right = 0.79170024
+anchor_bottom = 1.0262487
+offset_left = 26.735626
+offset_top = -20.46875
+offset_right = 24.935608
+offset_bottom = -20.348633
+texture_normal = ExtResource("8_c05uh")
+ignore_texture_size = true
+stretch_mode = 0
+personagem = "bitu"
 metadata/_edit_use_anchors_ = true
 
 [node name="Direita" type="TextureRect" parent="Bar/Paredes" unique_id=199541536]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -200,20 +276,35 @@ texture = ExtResource("4_mnwyw")
 [node name="MesaMeninas" parent="Bar/Paredes/Direita" unique_id=1871015727 instance=ExtResource("7_dh8hb")]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.12688805
-anchor_top = 0.53582644
-anchor_right = 0.4866797
-anchor_bottom = 1.2199743
+anchor_left = 0.14511722
+anchor_top = 0.40990052
+anchor_right = 0.50490886
+anchor_bottom = 1.0940484
 offset_left = -36.62506
 offset_top = -161.69257
 offset_right = -38.42505
 offset_bottom = -161.57251
 texture_normal = ExtResource("9_yonwv")
-personagem = "fulanadetal"
+personagem = "meninas"
+metadata/_edit_use_anchors_ = true
+
+[node name="MesaUniversitarios" parent="Bar/Paredes/Direita" unique_id=1829232524 instance=ExtResource("7_dh8hb")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5638672
+anchor_top = 0.4376783
+anchor_right = 0.9726172
+anchor_bottom = 1.1218262
+offset_left = -36.62506
+offset_top = -161.69257
+offset_right = -38.42505
+offset_bottom = -161.57251
+texture_normal = ExtResource("11_08tet")
+stretch_mode = 0
+personagem = "universitarios"
 metadata/_edit_use_anchors_ = true
 
 [node name="Frente" type="TextureRect" parent="Bar/Paredes" unique_id=245961603]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -221,6 +312,42 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("5_yonwv")
+
+[node name="Barman" parent="Bar/Paredes/Frente" unique_id=888479089 instance=ExtResource("7_dh8hb")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -741.0
+offset_top = -130.0
+offset_right = 349.0
+offset_bottom = 524.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("9_hnops")
+ignore_texture_size = true
+stretch_mode = 0
+personagem = "barman"
+
+[node name="Enzo" parent="Bar/Paredes/Frente" unique_id=571216865 instance=ExtResource("7_dh8hb")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -615.0
+offset_top = -557.0
+offset_right = -340.0
+offset_bottom = -35.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("11_2bkaf")
+ignore_texture_size = true
+stretch_mode = 0
+personagem = "enzo"
 
 [node name="BotaoDireita" type="Button" parent="Bar" unique_id=1294749898]
 layout_mode = 0
@@ -369,5 +496,12 @@ libraries/ = SubResource("AnimationLibrary_thjch")
 [connection signal="pressed" from="Bar/BotaoEsquerda" to="." method="_on_botao_esquerda_pressed"]
 [connection signal="pressed" from="Diario/DiarioBotao" to="Diario" method="_on_diario_botao_pressed"]
 
-[editable path="Bar/Paredes/Tras/MesaBebum"]
+[editable path="Bar/Paredes/Esquerda/MesaAmigos"]
+[editable path="Bar/Paredes/Esquerda/MesaEngravatados"]
+[editable path="Bar/Paredes/Tras/MesaTuristas"]
+[editable path="Bar/Paredes/Tras/Bebum"]
+[editable path="Bar/Paredes/Tras/Bitu"]
 [editable path="Bar/Paredes/Direita/MesaMeninas"]
+[editable path="Bar/Paredes/Direita/MesaUniversitarios"]
+[editable path="Bar/Paredes/Frente/Barman"]
+[editable path="Bar/Paredes/Frente/Enzo"]
