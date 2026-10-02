@@ -1,11 +1,30 @@
 [gd_scene format=3 uid="uid://c8ayd2i28xr7p"]
 
-[ext_resource type="FontFile" uid="uid://bqcqphicajray" path="res://medula/temp/fonte/quartz-ms/QuartzMSRegular.TTF" id="1_ym0av"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t5j7x"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_detail = 20
 
-[node name="PalavraChave" type="Label" unique_id=2045853124]
-custom_minimum_size = Vector2(230, 0)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_66ent"]
+bg_color = Color(0, 0, 0, 0.68235296)
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_detail = 20
+
+[node name="PalavraChave" type="Button" unique_id=15392911]
+offset_right = 167.0
+offset_bottom = 53.0
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_ym0av")
-theme_override_font_sizes/font_size = 64
-text = "Raimundo"
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_t5j7x")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_t5j7x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_t5j7x")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_66ent")
+theme_override_styles/focus = SubResource("StyleBoxFlat_t5j7x")
+text = "NomeBase"
