@@ -21,9 +21,9 @@ extends Node
 # AUTOMÁTICO: conversar com alguém registra 'falou_<chave>', ex: 'falou_fulanadetal'
 
 var personagens := {
-	'fulanadetal': {
-		'nome': 'Fulana de Tal',
-		'retrato': preload("res://medula/personagens/pessoas/fulanadetal/fulanadetal-idle.png"),
+	'meninas': {
+		'nome': 'Grupo de Meninas',
+		'retrato': preload("res://medula/personagens/pessoas/Meninas_Sprite.png"),
 		'horario': [50, 60], # entrada, saida, em minutos de jogo
 		'conversas': {
 			'inicio': [
@@ -43,13 +43,13 @@ var personagens := {
 		},
 	},
 
-	'amigo': {
-		'nome': 'Tiringa',
-		'retrato': preload("res://medula/personagens/pessoas/amigo/Amigo1.png"),
+	'seu biu': {
+		'nome': 'Seu Biu Pingão',
+		'retrato': preload("res://medula/personagens/pessoas/Biu_Sprite.png"),
 		'horario': [50, 60],
 		'conversas': {
 			'inicio': [
-				{'texto': 'Oi eu sou o tiringa'},
+				{'texto': 'Oi eu sou o seu biu'},
 			],
 		},
 	},

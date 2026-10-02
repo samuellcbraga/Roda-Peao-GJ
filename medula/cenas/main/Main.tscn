@@ -20,8 +20,14 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
+[node name="MesaBebum" parent="Jogatina/Bar/Paredes/Tras" parent_id_path=PackedInt32Array(1401306619, 1637826727) index="0" unique_id=1105394145]
+personagem = "seu biu"
+
 [node name="Direita" parent="Jogatina/Bar/Paredes" parent_id_path=PackedInt32Array(1401306619, 1933006014) index="2" unique_id=199541536]
 visible = false
+
+[node name="MesaMeninas" parent="Jogatina/Bar/Paredes/Direita" index="0" unique_id=1871015727]
+personagem = "meninas"
 
 [node name="Frente" parent="Jogatina/Bar/Paredes" parent_id_path=PackedInt32Array(1401306619, 1933006014) index="3" unique_id=245961603]
 visible = true
@@ -30,3 +36,5 @@ visible = true
 
 [editable path="Inicio"]
 [editable path="Jogatina"]
+[editable path="Jogatina/Bar/Paredes/Tras/MesaBebum"]
+[editable path="Jogatina/Bar/Paredes/Direita/MesaMeninas"]
