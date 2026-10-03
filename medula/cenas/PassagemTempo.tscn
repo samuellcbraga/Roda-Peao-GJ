@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bl1apb8ts1ck3"]
+
+[ext_resource type="Script" uid="uid://c0tolyhbli8vk" path="res://medula/cenas/PassagemTempo.gd" id="1_passagem"]
+[ext_resource type="FontFile" uid="uid://ib1bobk57467" path="res://medula/fontes/Schoolbell-Regular.ttf" id="2_40mm6"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_passagem"]
+font_size = 96
+
+[node name="PassagemTempo" type="CanvasLayer" unique_id=964896190]
+layer = 10
+script = ExtResource("1_passagem")
+
+[node name="Tela" type="ColorRect" parent="." unique_id=1584832817]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Texto" type="Label" parent="Tela" unique_id=902418485]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_40mm6")
+text = "18h30"
+label_settings = SubResource("LabelSettings_passagem")
+horizontal_alignment = 1
+vertical_alignment = 1

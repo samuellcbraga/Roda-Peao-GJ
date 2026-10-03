@@ -19,6 +19,8 @@ var falas: Array = []
 var conversas: Dictionary = {}
 var indice := 0 
 var tween: Tween
+var tempoAPassar := 0 # soma dos 'passa_tempo' vistos na conversa, aplicado quando ela acaba
+var passagemTempoPreInstancia = preload(\"res://medula/cenas/PassagemTempo.tscn\")
 signal final_do_dialogo
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -40,6 +42,7 @@ func iniciarConversa(personagem: String) -> void:
 	$Speech.stream = dados['speech']
 	falas = conversas['inicio']
 	indice = 0
+	tempoAPassar = 0
 	_mostrarFalasAtual()
 	show()
 	_pop_in()
@@ -73,6 +76,7 @@ func onOpcaoEscolhida(i: int) -> void:
 	limparOpcoes()
 	esperandoEscolha = false
 	atlas.registrarEscolha(opcao.get('id', ''))
+	tempoAPassar += opcao.get('passa_tempo', 0)
 	escolhaFeita.emit(opcao.get('id', ''))
 	var proxima: String = opcao.get('vai_para', '')
 	if proxima == '':
@@ -101,6 +105,7 @@ func mostrarOpcoes(lista: Array) -> void:
 
 func _mostrarFalasAtual() -> void:
 	var fala: Dictionary = falas[indice]
+	tempoAPassar += fala.get('passa_tempo', 0)
 	texto_do_diálogo.text = fala['texto'] ## colocar animação de scroll na fala
 	var speed = 2 - (len(fala['texto'])/10)*.25
 	print(\"Ajustando velocidade da fala: \"+ str(speed))
@@ -115,6 +120,11 @@ func terminar() -> void:
 	$Speech.stop()
 	hide()
 	final_do_dialogo.emit()
+	if tempoAPassar > 0:
+		var passagem = passagemTempoPreInstancia.instantiate()
+		get_parent().add_child(passagem)
+		passagem.passar(tempoAPassar)
+		tempoAPassar = 0
 
 func terminardeFalar():
 	if indice <= len(falas):

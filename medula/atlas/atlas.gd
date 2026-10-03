@@ -19,6 +19,7 @@ extends Node
 #   se a condição bater, pula pro ramo; se não, é ignorada
 #   o primeiro desvio que bater ganha, então o mais específico vai primeiro
 # AUTOMÁTICO: conversar com alguém registra 'falou_<chave>', ex: 'falou_fulanadetal'
+# PASSAGEM DE TEMPO: 'passa_tempo': 30 numa fala ou opção -> quando a conversa acaba, a tela escurece e o relógio avança 30 min
 
 
 #func pegadorDeRecursos(recurso, quem, pose=''): # SUA FUNÇÃO DJI SUCESSO PARA RESGATAR QUAAAAALQUER IMAGEM 1!!!	
@@ -51,7 +52,7 @@ var personagens := {
 		'horario': [0, 90],
 		'conversas': {
 			'inicio': [
-				{'texto': 'eaê, tioooo?!!'}
+				{'texto': 'eaê, tioooo?!!', 'passa_tempo' : 30}
 			]
 		}
 	},
