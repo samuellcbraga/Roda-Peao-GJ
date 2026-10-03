@@ -1,5 +1,10 @@
 [gd_scene format=3 uid="uid://c5788gjidkqwf"]
 
+[ext_resource type="Texture2D" uid="uid://3jdob8rppmd6" path="res://medula/cenas/jogatina/componentes/interacoes/texturas/caixa-de-fala.png" id="1_s50t0"]
+[ext_resource type="Texture2D" uid="uid://cwki6vsc6i3pu" path="res://medula/cenas/jogatina/componentes/interacoes/texturas/nome-tag.png" id="2_8a522"]
+[ext_resource type="FontFile" uid="uid://ib1bobk57467" path="res://medula/fontes/Schoolbell-Regular.ttf" id="2_clg28"]
+[ext_resource type="Texture2D" uid="uid://bdbu7syigsdwg" path="res://medula/cenas/jogatina/componentes/interacoes/texturas/continuar.svg" id="2_jy66i"]
+
 [sub_resource type="GDScript" id="GDScript_86cne"]
 resource_name = "caixaDeDialogo"
 script/source = "extends Control
@@ -97,16 +102,26 @@ func mostrarOpcoes(lista: Array) -> void:
 func _mostrarFalasAtual() -> void:
 	var fala: Dictionary = falas[indice]
 	texto_do_diálogo.text = fala['texto'] ## colocar animação de scroll na fala
-	$Speech.play()
-	var lista: Array = fala.get('opcoes', [])
-	if not lista.is_empty():
-		mostrarOpcoes(lista)
+	var speed = 2 - (len(fala['texto'])/10)*.25
+	print(\"Ajustando velocidade da fala: \"+ str(speed))
+	if speed <= 0:
+		speed = 0.1
+	$\"DialogBox/PanelContainer/MarginContainer/textoDoDiálogo/AnimationPlayer\".play(\"write\", -1, speed)
+	
 func terminar() -> void:
 	falas = []
 	await _pop_out()
-	hide()
+	$\"DialogBox/PanelContainer/MarginContainer/textoDoDiálogo/AnimationPlayer\".stop()
 	$Speech.stop()
+	hide()
 	final_do_dialogo.emit()
+
+func terminardeFalar():
+	if indice <= len(falas):
+		var fala: Dictionary = falas[indice]
+		var lista: Array = fala.get('opcoes', [])
+		if not lista.is_empty():
+			mostrarOpcoes(lista)
 
 func _pop_in() -> void:                                           
 	caixa.pivot_offset = caixa.size / 2
@@ -125,25 +140,103 @@ func _pop_out() -> void:                                          # NEW
 	
 "
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86cne"]
-content_margin_left = 24.0
-content_margin_top = 12.0
-content_margin_right = 12.0
-content_margin_bottom = 24.0
-bg_color = Color(0.42352942, 0.6, 0.6, 0.8901961)
-corner_radius_top_left = 28
-corner_radius_top_right = 28
-corner_radius_bottom_right = 28
-corner_radius_bottom_left = 28
-corner_detail = 10
+[sub_resource type="Animation" id="Animation_clg28"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../../Speech:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../continuar:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbhkt"]
-content_margin_left = 5.0
-content_margin_right = 5.0
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+[sub_resource type="Animation" id="Animation_e7akv"]
+resource_name = "write"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../../Speech:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"terminardeFalar"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../continuar:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mumfb"]
+_data = {
+&"RESET": SubResource("Animation_clg28"),
+&"write": SubResource("Animation_e7akv")
+}
 
 [node name="CaixadeDialogo" type="ColorRect" unique_id=1119639224 groups=["caixaDialogo"]]
 anchors_preset = 15
@@ -151,24 +244,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0, 0, 0.43137255)
+color = Color(0, 0, 0, 0.59607846)
 script = SubResource("GDScript_86cne")
-
-[node name="spriteChar" type="TextureRect" parent="." unique_id=327323536]
-custom_maximum_size = Vector2(920, 920)
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -811.0
-offset_top = -483.0
-offset_right = 109.0
-offset_bottom = 437.0
-grow_horizontal = 2
-grow_vertical = 2
-stretch_mode = 5
 
 [node name="DialogBox" type="Control" parent="." unique_id=1262844839]
 layout_mode = 1
@@ -176,39 +253,82 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -210.0
+offset_left = 82.0
+offset_top = -233.0
+offset_right = -457.0
+offset_bottom = -23.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="PanelContainer" type="PanelContainer" parent="DialogBox" unique_id=49176593]
+[node name="PanelContainer" type="TextureRect" parent="DialogBox" unique_id=1056939306]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -277.0
+offset_right = 1444.0
+grow_vertical = 0
+texture = ExtResource("1_s50t0")
+expand_mode = 1
+
+[node name="continuar" type="TextureButton" parent="DialogBox/PanelContainer" unique_id=281063004]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -65.0
+offset_top = -59.0
+offset_right = -43.0
+offset_bottom = -37.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("2_jy66i")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogBox/PanelContainer" unique_id=573531317]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 60.0
+offset_right = 1009.0
+offset_bottom = 243.0
+
+[node name="textoDoDiálogo" type="RichTextLabel" parent="DialogBox/PanelContainer/MarginContainer" unique_id=969698106]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_clg28")
+theme_override_font_sizes/normal_font_size = 43
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DialogBox/PanelContainer/MarginContainer/textoDoDiálogo" unique_id=748442428]
+libraries/ = SubResource("AnimationLibrary_mumfb")
+
+[node name="nameTag" type="TextureRect" parent="DialogBox" unique_id=252282307]
+layout_mode = 0
+offset_left = 49.0
+offset_top = -131.0
+offset_right = 443.0
+offset_bottom = -35.0
+texture = ExtResource("2_8a522")
+expand_mode = 1
+
+[node name="nomeChar" type="Label" parent="DialogBox/nameTag" unique_id=1189778179]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 10.0
-offset_right = -10.0
-offset_bottom = -34.0
+offset_left = 14.0
+offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_86cne")
-
-[node name="MarginContainer" type="MarginContainer" parent="DialogBox/PanelContainer" unique_id=573531317]
-layout_mode = 2
-
-[node name="textoDoDiálogo" type="RichTextLabel" parent="DialogBox/PanelContainer/MarginContainer" unique_id=969698106]
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 34
-
-[node name="nameTag" type="PanelContainer" parent="DialogBox" unique_id=69366985]
-layout_mode = 0
-offset_right = 91.0
-offset_bottom = 40.0
-offset_transform_enabled = true
-offset_transform_position = Vector2(30, -50)
-theme_override_styles/panel = SubResource("StyleBoxFlat_xbhkt")
-
-[node name="nomeChar" type="Label" parent="DialogBox/nameTag" unique_id=1189778179]
-layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_clg28")
+theme_override_font_sizes/font_size = 50
+vertical_alignment = 2
 
 [node name="opcoes" type="VBoxContainer" parent="DialogBox" unique_id=1207634952]
 visible = false
@@ -225,3 +345,20 @@ grow_vertical = 0
 theme_override_constants/separation = 8
 
 [node name="Speech" type="AudioStreamPlayer" parent="." unique_id=1498560387]
+
+[node name="spriteChar" type="TextureRect" parent="." unique_id=327323536]
+custom_maximum_size = Vector2(920, 920)
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -829.0
+offset_top = 80.0
+offset_right = 91.0
+offset_bottom = -80.0
+grow_horizontal = 0
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5

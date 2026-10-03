@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n23gh2ocnn3d"
-path="res://.godot/imported/idle.png-04a37fb112f3f23d87c2e65b81df236a.ctex"
+uid="uid://do546jhgi1l0h"
+path="res://.godot/imported/enzo_sprite.png-5eee1be582d10eaa4abb6a97d6fd83b1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://medula/personagens/pessoas/turistas/idle.png"
-dest_files=["res://.godot/imported/idle.png-04a37fb112f3f23d87c2e65b81df236a.ctex"]
+source_file="res://medula/personagens/pessoas/enzo/enzo_sprite.png"
+dest_files=["res://.godot/imported/enzo_sprite.png-5eee1be582d10eaa4abb6a97d6fd83b1.ctex"]
 
 [params]
 

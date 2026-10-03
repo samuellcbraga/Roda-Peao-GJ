@@ -3,8 +3,50 @@
 [ext_resource type="Script" uid="uid://bvsgw6xdk5yx" path="res://medula/cenas/main/Main.gd" id="1_aqkb7"]
 [ext_resource type="PackedScene" uid="uid://ckqtehj8ncvt5" path="res://medula/cenas/jogatina/Jogatina.tscn" id="2_4dojx"]
 [ext_resource type="PackedScene" uid="uid://2hvtfgks8fkt" path="res://medula/cenas/inicio/Inicio.tscn" id="2_aqkb7"]
-[ext_resource type="PackedScene" uid="uid://d2mqe0jjb2tnj" path="res://medula/cenas/intro/intro.tscn" id="4_f8i07"]
+[ext_resource type="Script" uid="uid://drg4qgpyp48px" path="res://medula/cenas/intro/intro.gd" id="3_u8dac"]
+[ext_resource type="Texture2D" uid="uid://b63aese34jomk" path="res://medula/cenas/intro/texturas/background_intro.png" id="4_b6mpr"]
+[ext_resource type="AudioStream" uid="uid://dp60gmlr0m76e" path="res://medula/sfx/typing.mp3" id="5_6ndd4"]
 [ext_resource type="PackedScene" uid="uid://svgs442mwn8x" path="res://medula/cenas/final/final.tscn" id="5_yv8iy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nl2vw"]
+font_size = 56
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_nl2vw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texto:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_b2n38"]
+resource_name = "write"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texto:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4667g"]
+_data = {
+&"RESET": SubResource("Animation_nl2vw"),
+&"write": SubResource("Animation_b2n38")
+}
 
 [node name="Main" type="Control" unique_id=1515211865]
 layout_mode = 3
@@ -18,9 +60,51 @@ script = ExtResource("1_aqkb7")
 [node name="Inicio" parent="." unique_id=205044729 instance=ExtResource("2_aqkb7")]
 layout_mode = 1
 
-[node name="Intro" parent="." unique_id=1425991048 instance=ExtResource("4_f8i07")]
+[node name="Intro" type="Control" parent="." unique_id=1425991048]
 visible = false
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_u8dac")
+
+[node name="Background_Intro" type="TextureRect" parent="Intro" unique_id=855630282]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_b6mpr")
+
+[node name="Texto" type="Label" parent="Intro" unique_id=87252599]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 274.0
+offset_right = 1707.0
+offset_bottom = 769.0
+text = "Na manhã do dia de hoje, algo aconteceu."
+label_settings = SubResource("LabelSettings_nl2vw")
+horizontal_alignment = 1
+vertical_alignment = 1
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="Botao_Intro" type="Button" parent="Intro" unique_id=1856355560]
+layout_mode = 0
+offset_left = 1590.0
+offset_top = 654.0
+offset_right = 1685.0
+offset_bottom = 753.0
+text = "->"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Intro" unique_id=425417201]
+deterministic = true
+callback_mode_method = 1
+callback_mode_discrete = 0
+libraries/ = SubResource("AnimationLibrary_4667g")
+
+[node name="SFXTyping" type="AudioStreamPlayer" parent="Intro" unique_id=1674875149]
+stream = ExtResource("5_6ndd4")
 
 [node name="Jogatina" parent="." unique_id=1401306619 instance=ExtResource("2_4dojx")]
 visible = false
@@ -34,6 +118,10 @@ visible = false
 layout_mode = 0
 
 [connection signal="pressed" from="Inicio/Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="Intro/Botao_Intro" to="Intro" method="_on_botao_intro_pressed"]
+[connection signal="animation_changed" from="Intro/AnimationPlayer" to="Intro" method="_on_animation_player_animation_changed"]
+[connection signal="animation_finished" from="Intro/AnimationPlayer" to="Intro" method="_on_animation_player_animation_finished"]
+[connection signal="animation_started" from="Intro/AnimationPlayer" to="Intro" method="_on_animation_player_animation_started"]
 
 [editable path="Inicio"]
 [editable path="Jogatina"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0586h3gy7ciq"
-path="res://.godot/imported/mesa-meninas_placeholder.png-e056daf5eeb17358b42223097e852cf2.ctex"
+uid="uid://cwki6vsc6i3pu"
+path="res://.godot/imported/nome-tag.png-4a4330a21194272c001fcb083c8698aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://medula/personagens/mesas/meninas/mesa-meninas_placeholder.png"
-dest_files=["res://.godot/imported/mesa-meninas_placeholder.png-e056daf5eeb17358b42223097e852cf2.ctex"]
+source_file="res://medula/cenas/jogatina/componentes/interacoes/texturas/nome-tag.png"
+dest_files=["res://.godot/imported/nome-tag.png-4a4330a21194272c001fcb083c8698aa.ctex"]
 
 [params]
 

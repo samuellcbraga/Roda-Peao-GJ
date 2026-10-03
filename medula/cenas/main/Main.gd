@@ -10,7 +10,11 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+func abrirJogatina():
+	$Inicio.hide()
+	$Jogatina.show()
 
 func _on_iniciar_pressed() -> void:
 	$Inicio.hide()
 	$Intro.show()
+	$Intro/AnimationPlayer.play("write")

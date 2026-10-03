@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3jluylw1i1dr"
-path="res://.godot/imported/uni_portrait.png-6f58994a8459c2dee5bcd7559a416d88.ctex"
+uid="uid://bdbu7syigsdwg"
+path="res://.godot/imported/continuar.svg-ff5c59031859a5aba6a0646fb4208df8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://medula/personagens/pessoas/universitarios/uni_portrait.png"
-dest_files=["res://.godot/imported/uni_portrait.png-6f58994a8459c2dee5bcd7559a416d88.ctex"]
+source_file="res://medula/cenas/jogatina/componentes/interacoes/texturas/continuar.svg"
+dest_files=["res://.godot/imported/continuar.svg-ff5c59031859a5aba6a0646fb4208df8.ctex"]
 
 [params]
 
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=8.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

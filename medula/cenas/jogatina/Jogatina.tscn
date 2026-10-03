@@ -10,17 +10,17 @@
 [ext_resource type="Texture2D" uid="uid://cnqg40v45aww8" path="res://medula/personagens/mesas/turistas/mesa_turistas_placeholder.png" id="7_hhb71"]
 [ext_resource type="Texture2D" uid="uid://clf4qctwhuqjv" path="res://medula/personagens/interativos/bebum/idle.jpg" id="8_08tet"]
 [ext_resource type="Texture2D" uid="uid://caufmtri0k2vp" path="res://medula/personagens/interativos/bitu/idle.png" id="8_c05uh"]
-[ext_resource type="Texture2D" uid="uid://d0586h3gy7ciq" path="res://medula/personagens/mesas/meninas/mesa-meninas_placeholder.png" id="9_yonwv"]
 [ext_resource type="Texture2D" uid="uid://birt5xndk2hdh" path="res://medula/cenas/jogatina/componentes/paredes/direita.png" id="10_gmfi3"]
 [ext_resource type="Texture2D" uid="uid://cyqqlmf2moyfw" path="res://icon.svg" id="10_mnwyw"]
 [ext_resource type="Script" uid="uid://byyxk0a4hml5q" path="res://medula/cenas/jogatina/componentes/diario/Diario.gd" id="11_dh8hb"]
+[ext_resource type="Texture2D" uid="uid://cfkttpxkmknd7" path="res://medula/personagens/mesas/meninas/mesa-meninas_placeholder.png.png" id="11_wbxgb"]
 [ext_resource type="Texture2D" uid="uid://b2mntvslsirn1" path="res://medula/cenas/jogatina/componentes/diario/texturas/fundo-diario_placeholder.png" id="12_iwlr2"]
 [ext_resource type="Texture2D" uid="uid://cb7ldan2jcmbw" path="res://medula/personagens/pessoas/universitarios/universitarios_sprite.png" id="12_v8gop"]
 [ext_resource type="Texture2D" uid="uid://b8sk0p0ntubqq" path="res://medula/cenas/jogatina/componentes/paredes/frente.png" id="13_08tet"]
 [ext_resource type="Texture2D" uid="uid://cmhel3h8t5mvc" path="res://medula/cenas/jogatina/componentes/diario/texturas/diario-botao.png" id="13_hnops"]
 [ext_resource type="Texture2D" uid="uid://bxgkoer07qyd3" path="res://medula/personagens/pessoas/barman/barman_sprite.png" id="14_gmfi3"]
 [ext_resource type="Texture2D" uid="uid://qfgpechjsgkk" path="res://medula/cenas/jogatina/componentes/diario/texturas/diario.png" id="14_iwlr2"]
-[ext_resource type="Texture2D" uid="uid://do546jhgi1l0h" path="res://medula/personagens/pessoas/enzo/enzo_sprite (2).png" id="15_v8gop"]
+[ext_resource type="Texture2D" uid="uid://do546jhgi1l0h" path="res://medula/personagens/pessoas/enzo/enzo_sprite.png" id="15_v8gop"]
 [ext_resource type="Texture2D" uid="uid://dad8rww2sq468" path="res://medula/personagens/pessoas/barman/barman_hover.png" id="15_wbxgb"]
 [ext_resource type="Texture2D" uid="uid://cvymoyye0k1cb" path="res://medula/personagens/pessoas/enzo/enzo_hover.png" id="16_v8gop"]
 [ext_resource type="AudioStream" uid="uid://b0q188ereiji3" path="res://medula/sfx/ambs/geral.mp3" id="22_gmfi3"]
@@ -376,7 +376,7 @@ offset_left = -36.625
 offset_top = -161.69257
 offset_right = -38.42505
 offset_bottom = -161.57251
-texture_normal = ExtResource("9_yonwv")
+texture_normal = ExtResource("11_wbxgb")
 personagem = "meninas"
 metadata/_edit_use_anchors_ = true
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n23gh2ocnn3d"
-path="res://.godot/imported/idle.png-04a37fb112f3f23d87c2e65b81df236a.ctex"
+uid="uid://cfkttpxkmknd7"
+path="res://.godot/imported/mesa-meninas_placeholder.png.png-a62222e69d6234a428783b625afd8d74.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://medula/personagens/pessoas/turistas/idle.png"
-dest_files=["res://.godot/imported/idle.png-04a37fb112f3f23d87c2e65b81df236a.ctex"]
+source_file="res://medula/personagens/mesas/meninas/mesa-meninas_placeholder.png.png"
+dest_files=["res://.godot/imported/mesa-meninas_placeholder.png.png-a62222e69d6234a428783b625afd8d74.ctex"]
 
 [params]
 

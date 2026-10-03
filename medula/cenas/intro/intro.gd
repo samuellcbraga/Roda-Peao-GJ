@@ -31,20 +31,41 @@ var indice := 0
 
 func _on_botao_intro_pressed():
 	if indice >= etapas.size():
-		get_tree().change_scene_to_file("res://medula/cenas/jogatina/Jogatina.tscn")
+		get_parent().abrirJogatina()
+		queue_free()
 		return
 	var etapa = etapas[indice]
+	var speed = 1
+	if len(etapa["texto"]) > 50:
+		speed -= .2 * (len(etapa["texto"])/35)
+		print("Texto enorme! Velocidade agora é "+str(speed))
+		
+		if speed <= 0 :
+			speed=0.1
 	if etapa["modo"] == "adicionar":
+		$AnimationPlayer.play("write", -1, speed)
+		$AnimationPlayer.seek(float(len($Texto.text))/len(($Texto.text+ "\n\n" + etapa["texto"])))
 		$Texto.text += "\n\n" + etapa["texto"]
 	elif etapa["modo"] == "substituir":
 		$Texto.text = etapa["texto"]
+		
+		$AnimationPlayer.play("write",-1, speed)
 	indice += 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+		
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	$SFXTyping.stop()
+
+
+func _on_animation_player_animation_started(anim_name: StringName) -> void:
+	$SFXTyping.play(randf_range(0, $SFXTyping.stream.get_length()))

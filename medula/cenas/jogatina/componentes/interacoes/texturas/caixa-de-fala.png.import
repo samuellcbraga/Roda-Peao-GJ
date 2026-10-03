@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do546jhgi1l0h"
-path="res://.godot/imported/enzo_sprite (2).png-5f7060c3f0f0f2293714dea997e0a220.ctex"
+uid="uid://3jdob8rppmd6"
+path="res://.godot/imported/caixa-de-fala.png-7bdb026f8aad75b6bbbd6a1afa4947da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://medula/personagens/pessoas/enzo/enzo_sprite (2).png"
-dest_files=["res://.godot/imported/enzo_sprite (2).png-5f7060c3f0f0f2293714dea997e0a220.ctex"]
+source_file="res://medula/cenas/jogatina/componentes/interacoes/texturas/caixa-de-fala.png"
+dest_files=["res://.godot/imported/caixa-de-fala.png-7bdb026f8aad75b6bbbd6a1afa4947da.ctex"]
 
 [params]
 

@@ -28,7 +28,7 @@ extends Node
 		
 	
 
-var tempoPassado = 30 #começa de 18h30, isso são os minutos a partir de 18h30
+var tempoPassado = 0 #começa de 18h30, isso são os minutos a partir de 18h30
 
 var personagens := {
 	'barman': {
@@ -38,7 +38,7 @@ var personagens := {
 		'horario': [0, 6767],
 		'conversas': {
 			'inicio': [
-				{'texto': 'treste teste teste'}
+				{'texto': 'E aí, Zé? Como tá a fofoca, ein? Lembra que tu tem que contar a Janaína!'}
 			]
 		}
 	},
@@ -69,25 +69,27 @@ var personagens := {
 	},
 	
 	'universitarios': {
-		'nome': 'Grupo de Universitários',
-		'poses': {'idle': preload('res://medula/personagens/pessoas/universitarios/uni_portrait.png')},
+		'nome': 'Universitários',
+		'poses': {'idle': preload('res://medula/personagens/pessoas/universitarios/idle.png')},
 		'speech': preload('res://medula/personagens/pessoas/universitarios/bla.mp3'),
 		'horario': [30, 150],
 		'conversas': {
 			'inicio': [
-				{'texto': 'Mulheeer, nem te conto o babaado! Eitcha, Zé veio escutar nóis...'}
+				{'texto': 'Mulheeer, nem te conto o babaado!'},
+				{'texto': 'Eitcha, Zé veio escutar nóis...'}
 			]
 		}
 	},
 	
 	'turistas': {
-		'nome': 'Grupo de Universitários',
+		'nome': 'Turistas',
 		'poses': {'idle': preload('res://medula/personagens/pessoas/turistas/idle.png')},
 		'speech': preload('res://medula/personagens/pessoas/barman/bla.mp3'),
 		'horario': [90, 150],
 		'conversas': {
 			'inicio': [
-				{'texto': 'tchê e pir e brother, paixxxx, ei paizão'}
+				{'texto': 'Bah, tchê-'},
+				{'texto': 'Eaê, paizão?!'}
 			]
 		}
 	},
