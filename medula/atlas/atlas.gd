@@ -33,7 +33,7 @@ var tempoPassado = 30 #começa de 18h30, isso são os minutos a partir de 18h30
 var personagens := {
 	'barman': {
 		'nome': 'Barman',
-		'poses': {'idle': preload('res://medula/personagens/pessoas/barman/idle.png')},
+		'poses': {'idle': preload('res://medula/personagens/pessoas/barman/barman_portrait.png')},
 		'speech': preload('res://medula/personagens/pessoas/barman/bla.mp3'),
 		'horario': [0, 6767],
 		'conversas': {
@@ -46,7 +46,7 @@ var personagens := {
 	
 	'enzo': {
 		'nome': 'Enzo Gabriel',
-		'poses': {'idle': preload('res://medula/personagens/pessoas/enzo/idle.png')},
+		'poses': {'idle': preload('res://medula/personagens/pessoas/enzo/enzo_portrait.png')},
 		'speech': preload('res://medula/personagens/pessoas/enzo/bla.mp3'),
 		'horario': [0, 90],
 		'conversas': {
@@ -70,7 +70,7 @@ var personagens := {
 	
 	'universitarios': {
 		'nome': 'Grupo de Universitários',
-		'poses': {'idle': preload('res://medula/personagens/pessoas/universitarios/idle.png')},
+		'poses': {'idle': preload('res://medula/personagens/pessoas/universitarios/uni_portrait.png')},
 		'speech': preload('res://medula/personagens/pessoas/universitarios/bla.mp3'),
 		'horario': [30, 150],
 		'conversas': {
@@ -121,12 +121,30 @@ var personagens := {
 		'poses': {'idle': preload('res://medula/personagens/mesas/amigos/mesa-amigos_placeholder.png')},
 		'speech': preload('res://medula/personagens/pessoas/meninas/bla.mp3'),
 		'horario': [0, 6767],
+		'faseConversa': 0,
 		'conversas': {
 			'inicio': [
-				{'texto': 'Oi Zé! Como tá indo a investigação?'}
-			]
+				{'texto': 'E aí, comparça! Como andam as coisas?', 'opcoes': [
+					{'texto': 'Tudo em cima.', 'vai_para': 'tut2'},
+				]},
+			],
+			'tut2': [
+				{'texto': 'E a esposa? Como ficou sua vinda hoje?', 'opcoes': [
+					{'texto': 'Finalmente gostou de eu vir, animada com a fofoca.', 'vai_para': 'tut3'},
+				]},
+			],
+			'tut3': [
+				{'texto': 'Haha, grande Jana! Com certeza está perguntando isso para falar com a minha esposa.', 'opcoes': [
+					{'texto': 'É. Problema é que eu não entendo desse negócio de fofocar.', 'vai_para': 'tut4'},
+				]},
+			],
+			'tut4': [
+				{'texto': 'Pois não se preocupe! Vou te ensinar rapidinho. Hoje o bar ‘tá cheio.'},
+				{'texto': 'Primeiro, cê tem que olhar pra todos os cantos do bar e ver quem tá por aí além do Garçom. Tenta dar uma olhadinha pros lados...'},
+			],
 		},
 	},
+	
 	'meninas': {
 		'nome': 'Grupo de Meninas',
 		'poses': {'idle': preload('res://medula/personagens/pessoas/meninas/idle.png')},

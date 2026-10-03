@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://svgs442mwn8x"]
+
+[ext_resource type="Texture2D" uid="uid://hsldcmekj8yh" path="res://medula/personagens/pessoas/janaina/perguntando.png" id="1_7hf15"]
+[ext_resource type="Texture2D" uid="uid://qfgpechjsgkk" path="res://medula/cenas/jogatina/componentes/diario/texturas/diario.png" id="2_mo8gw"]
+[ext_resource type="Texture2D" uid="uid://bqvplu2ba4pv3" path="res://medula/cenas/jogatina/componentes/balao de fala janaina.png" id="3_ckxah"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uwbbc"]
+font_size = 36
+font_color = Color(0, 0, 0, 1)
+
+[node name="Final" type="Control" unique_id=1093390847]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Background" type="TextureRect" parent="." unique_id=1401835961]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Janaina" type="TextureRect" parent="." unique_id=1590827406]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 29.0
+offset_right = 546.3037
+offset_bottom = 1079.0
+texture = ExtResource("1_7hf15")
+expand_mode = 3
+
+[node name="Diario" type="TextureRect" parent="." unique_id=893366343]
+visible = false
+layout_mode = 0
+offset_left = 662.0
+offset_top = 277.0
+offset_right = 1818.0
+offset_bottom = 1101.0
+texture = ExtResource("2_mo8gw")
+expand_mode = 2
+
+[node name="Balao de fala" type="TextureRect" parent="." unique_id=830844388]
+layout_mode = 0
+offset_left = 92.0
+offset_top = -2.0
+offset_right = 1658.0
+offset_bottom = 735.0
+texture = ExtResource("3_ckxah")
+expand_mode = 2
+
+[node name="Perguntas" type="Label" parent="." unique_id=2132546042]
+layout_mode = 0
+offset_left = 622.0
+offset_top = 60.0
+offset_right = 1404.0
+offset_bottom = 163.0
+text = "Bem vindo de volta! E aí, conseguiu a fofoca? 
+Quero saber tudinho!"
+label_settings = SubResource("LabelSettings_uwbbc")
+horizontal_alignment = 1
+vertical_alignment = 1

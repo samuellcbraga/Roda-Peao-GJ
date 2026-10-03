@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ckqtehj8ncvt5" path="res://medula/cenas/jogatina/Jogatina.tscn" id="2_4dojx"]
 [ext_resource type="PackedScene" uid="uid://2hvtfgks8fkt" path="res://medula/cenas/inicio/Inicio.tscn" id="2_aqkb7"]
 [ext_resource type="PackedScene" uid="uid://d2mqe0jjb2tnj" path="res://medula/cenas/intro/intro.tscn" id="4_f8i07"]
+[ext_resource type="PackedScene" uid="uid://svgs442mwn8x" path="res://medula/cenas/final/final.tscn" id="5_yv8iy"]
 
 [node name="Main" type="Control" unique_id=1515211865]
 layout_mode = 3
@@ -17,6 +18,10 @@ script = ExtResource("1_aqkb7")
 [node name="Inicio" parent="." unique_id=205044729 instance=ExtResource("2_aqkb7")]
 layout_mode = 1
 
+[node name="Intro" parent="." unique_id=1425991048 instance=ExtResource("4_f8i07")]
+visible = false
+layout_mode = 1
+
 [node name="Jogatina" parent="." unique_id=1401306619 instance=ExtResource("2_4dojx")]
 visible = false
 layout_mode = 1
@@ -24,9 +29,9 @@ layout_mode = 1
 [node name="MesaAmigos" parent="Jogatina/Bar/Paredes/Esquerda" parent_id_path=PackedInt32Array(1401306619, 966168995) index="0" unique_id=1105394145]
 personagem = "seu biu"
 
-[node name="Intro" parent="." unique_id=1425991048 instance=ExtResource("4_f8i07")]
+[node name="Final" parent="." unique_id=331564418 instance=ExtResource("5_yv8iy")]
 visible = false
-layout_mode = 1
+layout_mode = 0
 
 [connection signal="pressed" from="Inicio/Iniciar" to="." method="_on_iniciar_pressed"]
 
