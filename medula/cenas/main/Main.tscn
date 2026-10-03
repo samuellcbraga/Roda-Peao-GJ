@@ -3,10 +3,12 @@
 [ext_resource type="Script" uid="uid://bvsgw6xdk5yx" path="res://medula/cenas/main/Main.gd" id="1_aqkb7"]
 [ext_resource type="PackedScene" uid="uid://ckqtehj8ncvt5" path="res://medula/cenas/jogatina/Jogatina.tscn" id="2_4dojx"]
 [ext_resource type="PackedScene" uid="uid://2hvtfgks8fkt" path="res://medula/cenas/inicio/Inicio.tscn" id="2_aqkb7"]
+[ext_resource type="Texture2D" uid="uid://b3gtcwqipg340" path="res://medula/cenas/inicio/texturas/tela de inicio.jpeg" id="3_6ndd4"]
 [ext_resource type="Script" uid="uid://drg4qgpyp48px" path="res://medula/cenas/intro/intro.gd" id="3_u8dac"]
 [ext_resource type="Texture2D" uid="uid://b63aese34jomk" path="res://medula/cenas/intro/texturas/background_intro.png" id="4_b6mpr"]
 [ext_resource type="AudioStream" uid="uid://dp60gmlr0m76e" path="res://medula/sfx/typing.mp3" id="5_6ndd4"]
 [ext_resource type="PackedScene" uid="uid://svgs442mwn8x" path="res://medula/cenas/final/final.tscn" id="5_yv8iy"]
+[ext_resource type="PackedScene" uid="uid://dwfupnjsuw8st" path="res://medula/cenas/créditos/creditos.tscn" id="8_b6mpr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nl2vw"]
 font_size = 56
@@ -59,6 +61,34 @@ script = ExtResource("1_aqkb7")
 
 [node name="Inicio" parent="." unique_id=205044729 instance=ExtResource("2_aqkb7")]
 layout_mode = 1
+
+[node name="Background" parent="Inicio" index="0" unique_id=791556601]
+texture = ExtResource("3_6ndd4")
+
+[node name="Fade" parent="Inicio/Background" index="0" unique_id=1980910045]
+visible = false
+
+[node name="Title" parent="Inicio" index="1" unique_id=1285892253]
+visible = false
+
+[node name="Iniciar" parent="Inicio" index="2" unique_id=1466817792]
+offset_left = -892.0
+offset_top = -142.0
+offset_right = -494.0
+offset_bottom = 33.0
+
+[node name="Sair" parent="Inicio" index="3" unique_id=1470315512]
+offset_left = -902.0
+offset_top = 70.0
+offset_right = -489.0
+offset_bottom = 250.0
+
+[node name="Creditos" parent="Inicio" index="4" unique_id=556734188]
+visible = false
+offset_left = -126.0
+offset_top = 113.0
+offset_right = 485.0
+offset_bottom = 322.0
 
 [node name="Intro" type="Control" parent="." unique_id=1425991048]
 visible = false
@@ -117,11 +147,17 @@ personagem = "seu biu"
 visible = false
 layout_mode = 0
 
+[node name="Creditos" parent="." unique_id=1804121824 instance=ExtResource("8_b6mpr")]
+visible = false
+layout_mode = 0
+
 [connection signal="pressed" from="Inicio/Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="Inicio/Creditos" to="." method="_on_creditos_pressed"]
 [connection signal="pressed" from="Intro/Botao_Intro" to="Intro" method="_on_botao_intro_pressed"]
 [connection signal="animation_changed" from="Intro/AnimationPlayer" to="Intro" method="_on_animation_player_animation_changed"]
 [connection signal="animation_finished" from="Intro/AnimationPlayer" to="Intro" method="_on_animation_player_animation_finished"]
 [connection signal="animation_started" from="Intro/AnimationPlayer" to="Intro" method="_on_animation_player_animation_started"]
+[connection signal="voltar_pressionado" from="Creditos" to="." method="_on_creditos_voltar_pressionado"]
 
 [editable path="Inicio"]
 [editable path="Jogatina"]

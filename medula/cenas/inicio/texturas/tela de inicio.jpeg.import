@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfbnvjlrdt3md"
-path="res://.godot/imported/splashfundo.jpg-9c148bf2d60b78a418d15061f8c9b920.ctex"
+uid="uid://b3gtcwqipg340"
+path="res://.godot/imported/tela de inicio.jpeg-fe9c14993e94173a9df696d8873bcf29.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://medula/cenas/inicio/texturas/splashfundo.jpg"
-dest_files=["res://.godot/imported/splashfundo.jpg-9c148bf2d60b78a418d15061f8c9b920.ctex"]
+source_file="res://medula/cenas/inicio/texturas/tela de inicio.jpeg"
+dest_files=["res://.godot/imported/tela de inicio.jpeg-fe9c14993e94173a9df696d8873bcf29.ctex"]
 
 [params]
 

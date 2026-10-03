@@ -3,22 +3,15 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	pass # Replace with function body.
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
 
-func abrirJogatina():
-	$Inicio.hide()
-	$Jogatina.show()
+signal voltar_pressionado
 
-func _on_iniciar_pressed() -> void:
-	$Inicio.hide()
-	$Intro.show()
-	$Intro/AnimationPlayer.play("write")
-
-
-func _on_creditos_pressed() -> void:
-	$Creditos.show()
-	 
+func _on_back_pressed() -> void:
+	self.hide()
+	voltar_pressionado.emit()

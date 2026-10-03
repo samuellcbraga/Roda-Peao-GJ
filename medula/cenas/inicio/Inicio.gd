@@ -9,3 +9,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_sair_pressed() -> void:
+	get_tree().quit()
+
+
+func _on_creditos_pressed() -> void:
+	get_tree().change_scene_to_file("res://medula/cenas/créditos/creditos.tscn")

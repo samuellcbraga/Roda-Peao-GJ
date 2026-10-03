@@ -59,13 +59,52 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -413.5
-offset_top = 48.5
-offset_right = 413.5
-offset_bottom = 263.5
+offset_left = -403.0
+offset_top = -91.0
+offset_right = 424.0
+offset_bottom = 124.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 128
 theme_override_styles/normal = SubResource("StyleBoxFlat_ggl2t")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0n3sl")
 text = "JOGAR"
+
+[node name="Sair" type="Button" parent="." unique_id=1470315512]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 33.0
+offset_top = 181.0
+offset_right = 610.0
+offset_bottom = 388.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_ggl2t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0n3sl")
+text = "SAIR"
+
+[node name="Creditos" type="Button" parent="." unique_id=556734188]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -607.0
+offset_top = 183.0
+offset_right = 4.0
+offset_bottom = 392.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 128
+theme_override_styles/normal = SubResource("StyleBoxFlat_ggl2t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0n3sl")
+text = "CRÉDITOS"
+
+[connection signal="pressed" from="Sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="Creditos" to="." method="_on_creditos_pressed"]

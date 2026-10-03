@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dwfupnjsuw8st"]
+
+[ext_resource type="Texture2D" uid="uid://b63aese34jomk" path="res://medula/cenas/intro/texturas/background_intro.png" id="1_6q7kw"]
+[ext_resource type="Script" uid="uid://bxyeuydpben6s" path="res://medula/cenas/créditos/creditos.gd" id="1_7gxu4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kp8or"]
+font_size = 100
+font_color = Color(0, 0, 0, 1)
+
+[node name="Creditos" type="Control" unique_id=1804121824]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_7gxu4")
+
+[node name="fundo" type="TextureRect" parent="." unique_id=854171937]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("1_6q7kw")
+
+[node name="creditos" type="Label" parent="." unique_id=1560690607]
+layout_mode = 0
+offset_left = 324.0
+offset_top = 362.0
+offset_right = 1587.0
+offset_bottom = 779.0
+text = "Mica   Clara   Tarcizo   Júlia
+Pati     Bia       Samuel
+"
+label_settings = SubResource("LabelSettings_kp8or")
+horizontal_alignment = 1
+
+[node name="back" type="Button" parent="." unique_id=1558130999]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 154.0
+offset_right = 458.0
+offset_bottom = 243.0
+text = "voltar pro menu"
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
