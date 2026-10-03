@@ -47,7 +47,7 @@ var personagens := {
 	'enzo': {
 		'nome': 'Enzo Gabriel',
 		'poses': {'idle': preload('res://medula/personagens/pessoas/enzo/idle.png')},
-		'speech': preload('res://medula/personagens/pessoas/barman/bla.mp3'),
+		'speech': preload('res://medula/personagens/pessoas/enzo/bla.mp3'),
 		'horario': [0, 90],
 		'conversas': {
 			'inicio': [
@@ -71,7 +71,7 @@ var personagens := {
 	'universitarios': {
 		'nome': 'Grupo de Universitários',
 		'poses': {'idle': preload('res://medula/personagens/pessoas/universitarios/idle.png')},
-		'speech': preload('res://medula/personagens/pessoas/barman/bla.mp3'),
+		'speech': preload('res://medula/personagens/pessoas/universitarios/bla.mp3'),
 		'horario': [30, 150],
 		'conversas': {
 			'inicio': [
